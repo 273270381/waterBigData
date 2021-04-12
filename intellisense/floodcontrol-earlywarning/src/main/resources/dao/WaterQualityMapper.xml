@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.floodcontrol.earlywarning.dao.WaterQualityMapper">
+    <resultMap id="BaseResultMap" type="com.suchness.intellisense.model.Rivers">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="riverName" jdbcType="VARCHAR" property="rivername" />
+        <result column="name_id" jdbcType="VARCHAR" property="nameId" />
+        <result column="lever_id" jdbcType="INTEGER" property="leverId" />
+        <result column="length" jdbcType="DOUBLE" property="length" />
+        <result column="valleyAcreage" jdbcType="DOUBLE" property="valleyacreage" />
+        <result column="waterAcreage" jdbcType="DOUBLE" property="wateracreage" />
+    </resultMap>
+
+
+<select id="getWaterQualityDayBean"  resultType="com.suchness.floodcontrol.earlywarning.dto.WaterQualityMathBean">
+  SELECT min(w01019_Rtd) as minW01019_Rtd, max(w01019_Rtd) as maxW01019_Rtd,count(w01019_Rtd) as countW01019_Rtd,avg(w01019_Rtd) as avgW01019_Rtd,
+min(w21011_Rtd) as minW21011_Rtd, max(w21011_Rtd) as maxW21011_Rtd,count(w21011_Rtd) as countW21011_Rtd,avg(w21011_Rtd) as avgW21011_Rtd,
+min(w21003_Rtd) as minW21003_Rtd, max(w21003_Rtd) as maxW21003_Rtd,count(w21003_Rtd) as countW21003_Rtd,avg(w21003_Rtd) as avgW21003_Rtd,
+min(w01010_Rtd) as minW01010_Rtd, max(w01010_Rtd) as maxW01010_Rtd,count(w01010_Rtd) as countW01010_Rtd,avg(w01010_Rtd) as avgW01010_Rtd,
+min(w01001_Rtd) as minW01001_Rtd, max(w01001_Rtd) as maxW01001_Rtd,count(w01001_Rtd) as countW01001_Rtd,avg(w01001_Rtd) as avgW01001_Rtd,
+min(w01009_Rtd) as minW01009_Rtd, max(w01009_Rtd) as maxW01009_Rtd,count(w01009_Rtd) as countW01009_Rtd,avg(w01009_Rtd) as avgW01009_Rtd
+
+ FROM (select site_id,date_time,w01019_Rtd,w21011_Rtd,w21003_Rtd,w01010_Rtd,w01001_Rtd,w01009_Rtd  from water_quality_data_day
+  WHERE
+   date_time  like  CONCAT('%',#{date_time},'%')  AND site_id=#{site_id}) a
+</select>
+
+
+    <select id="getWaterQualityWeekBean"  resultType="com.suchness.floodcontrol.earlywarning.dto.WaterQualityMathBean">
+  SELECT min(w01019_Rtd) as minW01019_Rtd, max(w01019_Rtd) as maxW01019_Rtd,count(w01019_Rtd) as countW01019_Rtd,avg(w01019_Rtd) as avgW01019_Rtd,
+min(w21011_Rtd) as minW21011_Rtd, max(w21011_Rtd) as maxW21011_Rtd,count(w21011_Rtd) as countW21011_Rtd,avg(w21011_Rtd) as avgW21011_Rtd,
+min(w21003_Rtd) as minW21003_Rtd, max(w21003_Rtd) as maxW21003_Rtd,count(w21003_Rtd) as countW21003_Rtd,avg(w21003_Rtd) as avgW21003_Rtd,
+min(w01010_Rtd) as minW01010_Rtd, max(w01010_Rtd) as maxW01010_Rtd,count(w01010_Rtd) as countW01010_Rtd,avg(w01010_Rtd) as avgW01010_Rtd,
+min(w01001_Rtd) as minW01001_Rtd, max(w01001_Rtd) as maxW01001_Rtd,count(w01001_Rtd) as countW01001_Rtd,avg(w01001_Rtd) as avgW01001_Rtd,
+min(w01009_Rtd) as minW01009_Rtd, max(w01009_Rtd) as maxW01009_Rtd,count(w01009_Rtd) as countW01009_Rtd,avg(w01009_Rtd) as avgW01009_Rtd
+
+ FROM (select site_id,date_time,w01019_Rtd,w21011_Rtd,w21003_Rtd,w01010_Rtd,w01001_Rtd,w01009_Rtd  from water_quality_data_week
+  WHERE
+   date_time  in  <foreach collection="dates" item="item" index="index" open="(" separator="," close=")" >
+      #{item}
+    </foreach>
+
+       AND site_id=#{site_id}) a
+</select>
+
+
+
+    <select id="getWaterQualityMonthBean"  resultType="com.suchness.floodcontrol.earlywarning.dto.WaterQualityMathBean">
+        SELECT min(w01019_Rtd) as minW01019_Rtd, max(w01019_Rtd) as maxW01019_Rtd,count(w01019_Rtd) as countW01019_Rtd,avg(w01019_Rtd) as avgW01019_Rtd,
+        min(w21011_Rtd) as minW21011_Rtd, max(w21011_Rtd) as maxW21011_Rtd,count(w21011_Rtd) as countW21011_Rtd,avg(w21011_Rtd) as avgW21011_Rtd,
+        min(w21003_Rtd) as minW21003_Rtd, max(w21003_Rtd) as maxW21003_Rtd,count(w21003_Rtd) as countW21003_Rtd,avg(w21003_Rtd) as avgW21003_Rtd,
+        min(w01010_Rtd) as minW01010_Rtd, max(w01010_Rtd) as maxW01010_Rtd,count(w01010_Rtd) as countW01010_Rtd,avg(w01010_Rtd) as avgW01010_Rtd,
+        min(w01001_Rtd) as minW01001_Rtd, max(w01001_Rtd) as maxW01001_Rtd,count(w01001_Rtd) as countW01001_Rtd,avg(w01001_Rtd) as avgW01001_Rtd,
+        min(w01009_Rtd) as minW01009_Rtd, max(w01009_Rtd) as maxW01009_Rtd,count(w01009_Rtd) as countW01009_Rtd,avg(w01009_Rtd) as avgW01009_Rtd
+
+        FROM (select site_id,date_time,w01019_Rtd,w21011_Rtd,w21003_Rtd,w01010_Rtd,w01001_Rtd,w01009_Rtd  from water_quality_data_week
+       WHERE
+   date_time  like  CONCAT('%',#{date_time},'%')  AND site_id=#{site_id}) a
+
+
+    </select>
+
+
+    <select id="getWaterQualityYearBean"  resultType="com.suchness.floodcontrol.earlywarning.dto.WaterQualityMathBean">
+  SELECT min(w01019_Rtd) as minW01019_Rtd, max(w01019_Rtd) as maxW01019_Rtd,count(w01019_Rtd) as countW01019_Rtd,avg(w01019_Rtd) as avgW01019_Rtd,
+min(w21011_Rtd) as minW21011_Rtd, max(w21011_Rtd) as maxW21011_Rtd,count(w21011_Rtd) as countW21011_Rtd,avg(w21011_Rtd) as avgW21011_Rtd,
+min(w21003_Rtd) as minW21003_Rtd, max(w21003_Rtd) as maxW21003_Rtd,count(w21003_Rtd) as countW21003_Rtd,avg(w21003_Rtd) as avgW21003_Rtd,
+min(w01010_Rtd) as minW01010_Rtd, max(w01010_Rtd) as maxW01010_Rtd,count(w01010_Rtd) as countW01010_Rtd,avg(w01010_Rtd) as avgW01010_Rtd,
+min(w01001_Rtd) as minW01001_Rtd, max(w01001_Rtd) as maxW01001_Rtd,count(w01001_Rtd) as countW01001_Rtd,avg(w01001_Rtd) as avgW01001_Rtd,
+min(w01009_Rtd) as minW01009_Rtd, max(w01009_Rtd) as maxW01009_Rtd,count(w01009_Rtd) as countW01009_Rtd,avg(w01009_Rtd) as avgW01009_Rtd
+
+ FROM (select site_id,date_time,w01019_Rtd,w21011_Rtd,w21003_Rtd,w01010_Rtd,w01001_Rtd,w01009_Rtd  from water_quality_data_year
+  WHERE
+   date_time  like  CONCAT('%',#{date_time},'%')  AND site_id=#{site_id}) a
+</select>
+
+
+
+    <select id="getQualityEvaluationByStation" resultType="com.suchness.floodcontrol.earlywarning.dto.WaterQualityInfoDto">
+        SELECT
+        a.area_name as regionName,
+        w.id as siteId,
+        w.name as siteName,
+        d.name as stationType,
+        r.date_time as captureTime,
+        ri.riverName as  waterArea,
+        r.w01001_Rtd as ph,
+        r.w01019_Rtd as gmsy,
+        r.w21011_Rtd as zl,
+        r.w21003_Rtd as ad,
+        r.w01010_Rtd as sw,
+        r.w01009_Rtd as rjy
+        FROM
+        water_quality_site w,water_quality_data_week r,area a,dict d,rivers ri
+        WHERE
+        w.id = r.site_id and w.code_region = a.area_id and w.station_type_id=d.id and w.code_waterarea=ri.id
+
+            AND   r.date_time  in  <foreach collection="dates" item="item" index="index" open="(" separator="," close=")" >
+            #{item}
+        </foreach>
+        <if test="areaId!=null and areaId!=''">
+            AND (w.code_region = #{areaId} OR w.code_region IN ( SELECT t.area_id FROM area t WHERE FIND_IN_SET (#{areaId},ancestors) ))
+        </if>
+
+    </select>
+
+
+
+    <select id="getQualityEvaluationByStationByMonth" resultType="com.suchness.floodcontrol.earlywarning.dto.WaterQualityInfoDto">
+        SELECT
+        a.area_name as regionName,
+        w.id as siteId,
+        w.name as siteName,
+        d.name as stationType,
+        r.date_time as captureTime,
+        ri.riverName as  waterArea,
+        r.w01001_Rtd as ph,
+        r.w01019_Rtd as gmsy,
+        r.w21011_Rtd as zl,
+        r.w21003_Rtd as ad,
+        r.w01010_Rtd as sw,
+        r.w01009_Rtd as rjy
+        FROM
+        water_quality_site w,water_quality_data_week r,area a,dict d,rivers ri
+        WHERE
+        w.id = r.site_id and w.code_region = a.area_id and w.station_type_id=d.id and w.code_waterarea=ri.id
+
+        AND    r.date_time  like  CONCAT('%',#{date_time},'%')
+        <if test="areaId!=null and areaId!=''">
+            AND (w.code_region = #{areaId} OR w.code_region IN ( SELECT t.area_id FROM area t WHERE FIND_IN_SET (#{areaId},ancestors) ))
+        </if>
+
+    </select>
+
+</mapper>

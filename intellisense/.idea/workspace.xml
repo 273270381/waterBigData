@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="91085190-56d9-4424-befc-4792a372d35a" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/waterquality-monitor/target/" />
+    <ignored path="$PROJECT_DIR$/floodcontrol-earlywarning/target/" />
+    <ignored path="$PROJECT_DIR$/data-acquisition/target/" />
+    <ignored path="$PROJECT_DIR$/intellisense-mbg/target/" />
+    <ignored path="$PROJECT_DIR$/intellisense-gateway/target/" />
+    <ignored path="$PROJECT_DIR$/intellisense-common/target/" />
+    <ignored path="$PROJECT_DIR$/data-computation/target/" />
+    <ignored path="$PROJECT_DIR$/intellisense-user/target/" />
+    <ignored path="$PROJECT_DIR$/intellisense-auth/target/" />
+    <ignored path="$PROJECT_DIR$/river-patorl/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/intellisense$WaterqualityMonitorApplication.ic" NAME="WaterqualityMonitorApplication Coverage Results" MODIFIED="1608520766997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/intellisense-mbg/src/main/resources/generator.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Tag Library Descriptor" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>alarmCountList</find>
+      <find>b</find>
+      <find>alarmCountLists</find>
+      <find>a</find>
+      <find>getWaterAlarm</find>
+      <find>getWaterCategory</find>
+      <find>getAlarmCountValley</find>
+      <find>listRealTimeData</find>
+      <find>getRealTimeData</find>
+      <find>getAlarmMum</find>
+      <find>getAlarmCount</find>
+      <find>getVallrys</find>
+      <find>getAreas</find>
+      <find>area.area_name</find>
+      <find>getAreaInfos</find>
+      <find>list</find>
+      <find>getAlarmList</find>
+      <find>getHydrologyStation</find>
+      <find>getRivers</find>
+      <find>getWaterStationClassify</find>
+      <find>getWaterStation</find>
+      <find>getValleyInfo</find>
+      <find>getAreaInfo</find>
+      <find>waterquality-monitor</find>
+      <find>register</find>
+      <find>getDictInfo</find>
+      <find>addAlarm</find>
+      <find>getRiverPatrolDatas</find>
+      <find>getRiverPatrolData</find>
+      <find>mybatis-generator-maven-plugin</find>
+    </findStrings>
+    <dirStrings>
+      <dir>D:\android_project\MyGit\GitLab\water-big-data\intellisense\floodcontrol-earlywarning</dir>
+      <dir>D:\android_project\MyGit\GitLab\water-big-data\intellisense\waterquality-monitor</dir>
+      <dir>D:\android_project\MyGit\GitLab\water-big-data\intellisense</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/WaterQualityImpl.java" />
+        <option value="$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/mapper/WaterQualityRealDataMapper.java" />
+        <option value="$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/mapper/WaterQualityHistoryDataMapper.java" />
+        <option value="$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/mapper/WaterQualitySiteMapper.java" />
+        <option value="$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/mapper/RiversMapper.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dto/WaterStationdto.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dto/WaterQualityStation.java" />
+        <option value="$PROJECT_DIR$/floodcontrol-earlywarning/src/main/java/com/suchness/floodcontrol/earlywarning/service/impl/WaterReportServiceImpl.java" />
+        <option value="$PROJECT_DIR$/floodcontrol-earlywarning/src/main/java/com/suchness/floodcontrol/earlywarning/service/impl/WaterLevelServiceImpl.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/pom.xml" />
+        <option value="$PROJECT_DIR$/floodcontrol-earlywarning/src/main/java/com/suchness/floodcontrol/earlywarning/service/impl/HistoryDataServiceImpl.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/AlarmManageDao.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dto/Area.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/resources/dao/AlarmCountDao.xml" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/AlarmService.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/controller/WaterAlarmController.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/resources/dao/AlarmManageDao.xml" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/controller/WaterStationController.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/StationService.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/StationDao.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/resources/dao/StationDao.xml" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dto/AreaInfo.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/AlarmServiceImpl.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/StationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dto/DrainageAreaDto.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dto/ValleyInfo.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/controller/BasicInfoController.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/config/MyBatisConfig.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/resources/dao/BasicInfoDao.xml" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/BasicInfoDao.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/BasicInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/BasicInfoService.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/dto/RiverAreaDto.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dto/AreaDto.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/controller/RiverPatorlController.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/service/RiverPatorlService.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/dao/RiverPatorlDao.java" />
+        <option value="$PROJECT_DIR$/intellisense-gateway/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/domain/TreeSelect.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/dao/RiverPatrolDao.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/service/RiverPatrolService.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/controller/RiverPatrolController.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/resources/dao/RiverPatrolDao.xml" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/dto/RiverPatrolDataDto.java" />
+        <option value="$PROJECT_DIR$/river-patorl/pom.xml" />
+        <option value="$PROJECT_DIR$/intellisense-common/src/main/java/com/suchness/intellisense/common/utils/MD5.java" />
+        <option value="$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/service/impl/RiverPatorlServiceImpl.java" />
+        <option value="$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/WaterQualityDao.java" />
+        <option value="$PROJECT_DIR$/intellisense-mbg/src/main/resources/generator.properties" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="44" />
+    <option name="y" value="12" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="intellisense" type="b2602c69:ProjectViewProjectNode" />
+              <item name="intellisense" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="intellisense" type="b2602c69:ProjectViewProjectNode" />
+              <item name="intellisense" type="462c0819:PsiDirectoryNode" />
+              <item name="intellisense-mbg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="intellisense" type="b2602c69:ProjectViewProjectNode" />
+              <item name="intellisense" type="462c0819:PsiDirectoryNode" />
+              <item name="intellisense-mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="intellisense" type="b2602c69:ProjectViewProjectNode" />
+              <item name="intellisense" type="462c0819:PsiDirectoryNode" />
+              <item name="intellisense-mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="intellisense" type="b2602c69:ProjectViewProjectNode" />
+              <item name="intellisense" type="462c0819:PsiDirectoryNode" />
+              <item name="intellisense-mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="intellisense" type="b2602c69:ProjectViewProjectNode" />
+              <item name="intellisense" type="462c0819:PsiDirectoryNode" />
+              <item name="intellisense-mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="intellisense" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="intellisense" type="b2602c69:ProjectViewProjectNode" />
+              <item name="intellisense" type="462c0819:PsiDirectoryNode" />
+              <item name="intellisense-mbg" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1616139282215" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Data-Middle-Platform/serialport" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.suchness.intellisense.common.utils" />
+      <recent name="com.suchness.river.patorl.domain" />
+      <recent name="com.suchness.river.patorl.config" />
+      <recent name="com.suchness.waterquality.monitor.dto" />
+      <recent name="com.suchness.waterquality.monitor.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\android_project\MyGit\GitLab\water-big-data\intellisense\intellisense-mbg\src\main\resources" />
+      <recent name="D:\android_project\MyGit\GitLab\water-big-data\intellisense\waterquality-monitor\src\main\resources\dao" />
+      <recent name="D:\android_project\MyGit\GitLab\water-big-data\intellisense\intellisense-user\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Generator">
+    <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.suchness.intellisense.Generator" />
+      <module name="intellisense-mbg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.suchness.intellisense.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MD5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.suchness.intellisense.common.utils.MD5" />
+      <module name="intellisense-common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.suchness.intellisense.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataAcquisitionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="data-acquisition" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.suchness.data.acquisition.DataAcquisitionApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataComputationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="data-computation" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.suchness.data.computation.DataComputationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FloodcontrolEarlywarningApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="floodcontrol-earlywarning" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.suchness.floodcontrol.earlywarning.FloodcontrolEarlywarningApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntellisenseAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="intellisense-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.suchness.intellisense.auth.IntellisenseAuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntellisenseGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="intellisense-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.suchness.intellisense.IntellisenseGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntellisenseUserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="intellisense-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.suchness.intellisense.user.IntellisenseUserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RiverPatorlApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="river-patorl" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.suchness.river.patorl.RiverPatorlApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WaterqualityMonitorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="waterquality-monitor" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.suchness.waterquality.monitor.WaterqualityMonitorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Generator" />
+        <item itemvalue="Application.MD5" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="91085190-56d9-4424-befc-4792a372d35a" name="Default Changelist" comment="" />
+      <created>1607566878750</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607566878750</updated>
+      <workItem from="1607566880467" duration="33433000" />
+      <workItem from="1608529938910" duration="19697000" />
+      <workItem from="1608608311915" duration="8923000" />
+      <workItem from="1608637671739" duration="88449000" />
+      <workItem from="1609374906667" duration="5978000" />
+      <workItem from="1609385692775" duration="147144000" />
+      <workItem from="1611019424891" duration="597000" />
+      <workItem from="1611113263708" duration="13285000" />
+      <workItem from="1611538761641" duration="1836000" />
+      <workItem from="1611540616321" duration="49930000" />
+      <workItem from="1614563996552" duration="2189000" />
+      <workItem from="1615270112539" duration="6129000" />
+      <workItem from="1615966805334" duration="7901000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="68252000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49860725" visible="true" weight="0.2596401" />
+      <window_info id="Structure" order="1" sideWeight="0.5013928" side_tool="true" weight="0.23200513" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.4011142" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993573" weight="0.5835655" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5821727" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286908" />
+      <window_info anchor="bottom" id="Spring" order="7" weight="0.3286908" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3286908" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50064266" side_tool="true" weight="0.6420613" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.55153203" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32729805" />
+      <window_info anchor="bottom" id="Duplicate detector" order="15" weight="0.79805017" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.32969153" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49860725" visible="true" weight="0.28084832" />
+      <window_info id="Structure" order="1" sideWeight="0.5013928" side_tool="true" weight="0.23200513" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Duplicate detector" order="0" weight="0.79805017" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.52228415" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.38997215" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.5083566" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3286908" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3286908" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3286908" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.55153203" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.3286908" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" weight="0.32969153" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/dto/RiverAreaDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="25" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/domain/TreeSelect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/model/RiverArea.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#544#545#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/controller/WaterStationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/dao/RiverPatrolDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="100" selection-start-line="14" selection-start-column="100" selection-end-line="14" selection-end-column="100" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-user/src/main/java/com/suchness/intellisense/user/service/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/cn/hutool/hutool-all/4.5.7/hutool-all-4.5.7.jar!/cn/hutool/crypto/digest/BCrypt.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="253" column="25" selection-start-line="253" selection-start-column="25" selection-end-line="253" selection-end-column="25" />
+          <folding>
+            <element signature="e#20910#20911#0" expanded="true" />
+            <element signature="e#20960#20961#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-user/src/main/java/com/suchness/intellisense/user/service/impl/AdminServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="91" column="38" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-user/src/main/java/com/suchness/intellisense/user/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="46" column="43" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-auth/src/main/java/com/suchness/intellisense/auth/controller/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="48" column="77" lean-forward="true" selection-start-line="48" selection-start-column="77" selection-end-line="48" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/spring-web/5.2.6.RELEASE/spring-web-5.2.6.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/service/RiverPatrolService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/BasicInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="214" column="45" lean-forward="true" selection-start-line="214" selection-start-column="45" selection-end-line="214" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/controller/BasicInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/model/WaterQualityAlarmData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-380">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/controller/WaterAlarmController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="59" column="23" lean-forward="true" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/AlarmServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="212" column="48" selection-start-line="212" selection-start-column="48" selection-end-line="212" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/dto/RiverPatrolDataDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/resources/dao/RiverPatrolDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="90" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-common/src/main/java/com/suchness/intellisense/common/utils/MD5.java" />
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/config/MyBatisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/contants/Contants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6.jar!/org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/WaterqualityMonitorApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/WaterQualityDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/resources/dao/WaterQualityDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="62" column="57" lean-forward="true" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/AlarmManageDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/WaterQualityImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="37" column="6" lean-forward="true" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/resources/dao/BasicInfoDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/AlarmCountDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/controller/RiverPatrolController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/resources/dao/StationDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/BasicInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/model/RiverTrack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/mapper/RiverTrackMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/BasicInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="22" column="30" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/service/impl/RiverPatorlServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1767">
+          <caret line="93" column="17" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/dao/StationDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="70" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.m2/repository/org/apache/maven/plugins/maven-compiler-plugin/3.1/maven-compiler-plugin-3.1.pom">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/river-patorl/src/main/java/com/suchness/river/patorl/config/MyBatisConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/controller/WaterQualityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="229" column="49" selection-start-line="229" selection-start-column="28" selection-end-line="229" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-mbg/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="17" selection-start-line="17" selection-end-line="36" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-mbg/src/main/java/com/suchness/intellisense/CommentGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-mbg/src/main/resources/generatorConfig.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/intellisense-mbg/src/main/resources/generator.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

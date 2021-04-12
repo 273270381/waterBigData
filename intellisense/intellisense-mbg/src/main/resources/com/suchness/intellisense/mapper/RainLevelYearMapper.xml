@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.intellisense.mapper.RainLevelYearMapper">
+  <resultMap id="BaseResultMap" type="com.suchness.intellisense.model.RainLevelYear">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="stationId" jdbcType="VARCHAR" property="stationid" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="one" jdbcType="DOUBLE" property="one" />
+    <result column="two" jdbcType="DOUBLE" property="two" />
+    <result column="three" jdbcType="DOUBLE" property="three" />
+    <result column="four" jdbcType="DOUBLE" property="four" />
+    <result column="five" jdbcType="DOUBLE" property="five" />
+    <result column="six" jdbcType="DOUBLE" property="six" />
+    <result column="seven" jdbcType="DOUBLE" property="seven" />
+    <result column="eight" jdbcType="DOUBLE" property="eight" />
+    <result column="nine" jdbcType="DOUBLE" property="nine" />
+    <result column="ten" jdbcType="DOUBLE" property="ten" />
+    <result column="eleven" jdbcType="DOUBLE" property="eleven" />
+    <result column="twelve" jdbcType="DOUBLE" property="twelve" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, stationId, date, one, two, three, four, five, six, seven, eight, nine, ten, eleven, 
+    twelve
+  </sql>
+  <select id="selectByExample" parameterType="com.suchness.intellisense.model.RainLevelYearExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from rain_level_year
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rain_level_year
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rain_level_year
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.suchness.intellisense.model.RainLevelYearExample">
+    delete from rain_level_year
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.suchness.intellisense.model.RainLevelYear">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into rain_level_year (stationId, date, one, 
+      two, three, four, five, 
+      six, seven, eight, nine, 
+      ten, eleven, twelve)
+    values (#{stationid,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, #{one,jdbcType=DOUBLE}, 
+      #{two,jdbcType=DOUBLE}, #{three,jdbcType=DOUBLE}, #{four,jdbcType=DOUBLE}, #{five,jdbcType=DOUBLE}, 
+      #{six,jdbcType=DOUBLE}, #{seven,jdbcType=DOUBLE}, #{eight,jdbcType=DOUBLE}, #{nine,jdbcType=DOUBLE}, 
+      #{ten,jdbcType=DOUBLE}, #{eleven,jdbcType=DOUBLE}, #{twelve,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.suchness.intellisense.model.RainLevelYear">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into rain_level_year
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stationid != null">
+        stationId,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="one != null">
+        one,
+      </if>
+      <if test="two != null">
+        two,
+      </if>
+      <if test="three != null">
+        three,
+      </if>
+      <if test="four != null">
+        four,
+      </if>
+      <if test="five != null">
+        five,
+      </if>
+      <if test="six != null">
+        six,
+      </if>
+      <if test="seven != null">
+        seven,
+      </if>
+      <if test="eight != null">
+        eight,
+      </if>
+      <if test="nine != null">
+        nine,
+      </if>
+      <if test="ten != null">
+        ten,
+      </if>
+      <if test="eleven != null">
+        eleven,
+      </if>
+      <if test="twelve != null">
+        twelve,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stationid != null">
+        #{stationid,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="one != null">
+        #{one,jdbcType=DOUBLE},
+      </if>
+      <if test="two != null">
+        #{two,jdbcType=DOUBLE},
+      </if>
+      <if test="three != null">
+        #{three,jdbcType=DOUBLE},
+      </if>
+      <if test="four != null">
+        #{four,jdbcType=DOUBLE},
+      </if>
+      <if test="five != null">
+        #{five,jdbcType=DOUBLE},
+      </if>
+      <if test="six != null">
+        #{six,jdbcType=DOUBLE},
+      </if>
+      <if test="seven != null">
+        #{seven,jdbcType=DOUBLE},
+      </if>
+      <if test="eight != null">
+        #{eight,jdbcType=DOUBLE},
+      </if>
+      <if test="nine != null">
+        #{nine,jdbcType=DOUBLE},
+      </if>
+      <if test="ten != null">
+        #{ten,jdbcType=DOUBLE},
+      </if>
+      <if test="eleven != null">
+        #{eleven,jdbcType=DOUBLE},
+      </if>
+      <if test="twelve != null">
+        #{twelve,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.suchness.intellisense.model.RainLevelYearExample" resultType="java.lang.Long">
+    select count(*) from rain_level_year
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update rain_level_year
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.stationid != null">
+        stationId = #{record.stationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null">
+        date = #{record.date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.one != null">
+        one = #{record.one,jdbcType=DOUBLE},
+      </if>
+      <if test="record.two != null">
+        two = #{record.two,jdbcType=DOUBLE},
+      </if>
+      <if test="record.three != null">
+        three = #{record.three,jdbcType=DOUBLE},
+      </if>
+      <if test="record.four != null">
+        four = #{record.four,jdbcType=DOUBLE},
+      </if>
+      <if test="record.five != null">
+        five = #{record.five,jdbcType=DOUBLE},
+      </if>
+      <if test="record.six != null">
+        six = #{record.six,jdbcType=DOUBLE},
+      </if>
+      <if test="record.seven != null">
+        seven = #{record.seven,jdbcType=DOUBLE},
+      </if>
+      <if test="record.eight != null">
+        eight = #{record.eight,jdbcType=DOUBLE},
+      </if>
+      <if test="record.nine != null">
+        nine = #{record.nine,jdbcType=DOUBLE},
+      </if>
+      <if test="record.ten != null">
+        ten = #{record.ten,jdbcType=DOUBLE},
+      </if>
+      <if test="record.eleven != null">
+        eleven = #{record.eleven,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twelve != null">
+        twelve = #{record.twelve,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update rain_level_year
+    set id = #{record.id,jdbcType=INTEGER},
+      stationId = #{record.stationid,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=VARCHAR},
+      one = #{record.one,jdbcType=DOUBLE},
+      two = #{record.two,jdbcType=DOUBLE},
+      three = #{record.three,jdbcType=DOUBLE},
+      four = #{record.four,jdbcType=DOUBLE},
+      five = #{record.five,jdbcType=DOUBLE},
+      six = #{record.six,jdbcType=DOUBLE},
+      seven = #{record.seven,jdbcType=DOUBLE},
+      eight = #{record.eight,jdbcType=DOUBLE},
+      nine = #{record.nine,jdbcType=DOUBLE},
+      ten = #{record.ten,jdbcType=DOUBLE},
+      eleven = #{record.eleven,jdbcType=DOUBLE},
+      twelve = #{record.twelve,jdbcType=DOUBLE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.suchness.intellisense.model.RainLevelYear">
+    update rain_level_year
+    <set>
+      <if test="stationid != null">
+        stationId = #{stationid,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="one != null">
+        one = #{one,jdbcType=DOUBLE},
+      </if>
+      <if test="two != null">
+        two = #{two,jdbcType=DOUBLE},
+      </if>
+      <if test="three != null">
+        three = #{three,jdbcType=DOUBLE},
+      </if>
+      <if test="four != null">
+        four = #{four,jdbcType=DOUBLE},
+      </if>
+      <if test="five != null">
+        five = #{five,jdbcType=DOUBLE},
+      </if>
+      <if test="six != null">
+        six = #{six,jdbcType=DOUBLE},
+      </if>
+      <if test="seven != null">
+        seven = #{seven,jdbcType=DOUBLE},
+      </if>
+      <if test="eight != null">
+        eight = #{eight,jdbcType=DOUBLE},
+      </if>
+      <if test="nine != null">
+        nine = #{nine,jdbcType=DOUBLE},
+      </if>
+      <if test="ten != null">
+        ten = #{ten,jdbcType=DOUBLE},
+      </if>
+      <if test="eleven != null">
+        eleven = #{eleven,jdbcType=DOUBLE},
+      </if>
+      <if test="twelve != null">
+        twelve = #{twelve,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.suchness.intellisense.model.RainLevelYear">
+    update rain_level_year
+    set stationId = #{stationid,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR},
+      one = #{one,jdbcType=DOUBLE},
+      two = #{two,jdbcType=DOUBLE},
+      three = #{three,jdbcType=DOUBLE},
+      four = #{four,jdbcType=DOUBLE},
+      five = #{five,jdbcType=DOUBLE},
+      six = #{six,jdbcType=DOUBLE},
+      seven = #{seven,jdbcType=DOUBLE},
+      eight = #{eight,jdbcType=DOUBLE},
+      nine = #{nine,jdbcType=DOUBLE},
+      ten = #{ten,jdbcType=DOUBLE},
+      eleven = #{eleven,jdbcType=DOUBLE},
+      twelve = #{twelve,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

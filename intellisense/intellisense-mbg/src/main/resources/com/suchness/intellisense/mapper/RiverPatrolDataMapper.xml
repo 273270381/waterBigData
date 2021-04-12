@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.intellisense.mapper.RiverPatrolDataMapper">
+  <resultMap id="BaseResultMap" type="com.suchness.intellisense.model.RiverPatrolData">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="mileage" jdbcType="VARCHAR" property="mileage" />
+    <result column="problem" jdbcType="INTEGER" property="problem" />
+    <result column="river_track_id" jdbcType="INTEGER" property="riverTrackId" />
+    <result column="river_id" jdbcType="INTEGER" property="riverId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="river_area_id" jdbcType="INTEGER" property="riverAreaId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, start_time, end_time, mileage, problem, river_track_id, river_id, status, 
+    river_area_id
+  </sql>
+  <select id="selectByExample" parameterType="com.suchness.intellisense.model.RiverPatrolDataExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from river_patrol_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from river_patrol_data
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from river_patrol_data
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.suchness.intellisense.model.RiverPatrolDataExample">
+    delete from river_patrol_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.suchness.intellisense.model.RiverPatrolData">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into river_patrol_data (name, start_time, end_time, 
+      mileage, problem, river_track_id, 
+      river_id, status, river_area_id
+      )
+    values (#{name,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, 
+      #{mileage,jdbcType=VARCHAR}, #{problem,jdbcType=INTEGER}, #{riverTrackId,jdbcType=INTEGER}, 
+      #{riverId,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{riverAreaId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.suchness.intellisense.model.RiverPatrolData">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into river_patrol_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="startTime != null">
+        start_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="mileage != null">
+        mileage,
+      </if>
+      <if test="problem != null">
+        problem,
+      </if>
+      <if test="riverTrackId != null">
+        river_track_id,
+      </if>
+      <if test="riverId != null">
+        river_id,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="riverAreaId != null">
+        river_area_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mileage != null">
+        #{mileage,jdbcType=VARCHAR},
+      </if>
+      <if test="problem != null">
+        #{problem,jdbcType=INTEGER},
+      </if>
+      <if test="riverTrackId != null">
+        #{riverTrackId,jdbcType=INTEGER},
+      </if>
+      <if test="riverId != null">
+        #{riverId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="riverAreaId != null">
+        #{riverAreaId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.suchness.intellisense.model.RiverPatrolDataExample" resultType="java.lang.Long">
+    select count(*) from river_patrol_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update river_patrol_data
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.startTime != null">
+        start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.endTime != null">
+        end_time = #{record.endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.mileage != null">
+        mileage = #{record.mileage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.problem != null">
+        problem = #{record.problem,jdbcType=INTEGER},
+      </if>
+      <if test="record.riverTrackId != null">
+        river_track_id = #{record.riverTrackId,jdbcType=INTEGER},
+      </if>
+      <if test="record.riverId != null">
+        river_id = #{record.riverId,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.riverAreaId != null">
+        river_area_id = #{record.riverAreaId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update river_patrol_data
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      start_time = #{record.startTime,jdbcType=TIMESTAMP},
+      end_time = #{record.endTime,jdbcType=TIMESTAMP},
+      mileage = #{record.mileage,jdbcType=VARCHAR},
+      problem = #{record.problem,jdbcType=INTEGER},
+      river_track_id = #{record.riverTrackId,jdbcType=INTEGER},
+      river_id = #{record.riverId,jdbcType=INTEGER},
+      status = #{record.status,jdbcType=INTEGER},
+      river_area_id = #{record.riverAreaId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.suchness.intellisense.model.RiverPatrolData">
+    update river_patrol_data
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null">
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mileage != null">
+        mileage = #{mileage,jdbcType=VARCHAR},
+      </if>
+      <if test="problem != null">
+        problem = #{problem,jdbcType=INTEGER},
+      </if>
+      <if test="riverTrackId != null">
+        river_track_id = #{riverTrackId,jdbcType=INTEGER},
+      </if>
+      <if test="riverId != null">
+        river_id = #{riverId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="riverAreaId != null">
+        river_area_id = #{riverAreaId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.suchness.intellisense.model.RiverPatrolData">
+    update river_patrol_data
+    set name = #{name,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      mileage = #{mileage,jdbcType=VARCHAR},
+      problem = #{problem,jdbcType=INTEGER},
+      river_track_id = #{riverTrackId,jdbcType=INTEGER},
+      river_id = #{riverId,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      river_area_id = #{riverAreaId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

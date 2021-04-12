@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.waterquality.monitor.dao.StationDao">
+    <select id="getWaterStation" resultType="com.suchness.waterquality.monitor.dto.WaterStation">
+      SELECT
+      (@id := @id+1) AS id,
+      wq.id as ids,
+      wq.name as stationName,
+      wq.code,
+      (SELECT area.area_name FROM area WHERE area.area_id = wq.code_region)	as areaName,
+      (SELECT dict.`name` FROM dict WHERE dict.id = wq.station_type_id)as stationType,
+      wq.longitude,
+      wq.latitude,
+      (SELECT dict.`name` FROM dict WHERE dict.id = wq.lever_id)as controLever
+      FROM water_quality_site wq ,(select @id :=0)m
+      WHERE wq.code_region in
+      (SELECT area.area_id FROM area
+      <where>
+        <if test="areaName != null and areaName.size > 0 ">and area.area_name in
+          <foreach collection="areaName" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+        </if>
+      </where>
+      )
+      <if test="stationName != null and stationName != ''">and wq.`name` like "%"#{stationName}"%"</if>
+      <if test="code != null and code != ''">and wq.`code` like "%"#{code}"%"</if>
+    </select>
+
+    <select id="getWaterStationClassify" resultType="com.suchness.waterquality.monitor.dto.WaterStation">
+      SELECT
+      (@id := @id+1) AS id,
+      wq.id as ids,
+      wq.name as stationName,
+      wq.code,
+      (SELECT area.area_name FROM area WHERE area.area_id = wq.code_region)	as areaName,
+      (SELECT dict.`name` FROM dict WHERE dict.id = wq.station_type_id)as stationType,
+      wq.longitude,
+      wq.latitude,
+      (SELECT dict.`name` FROM dict WHERE dict.id = wq.lever_id)as controLever
+      FROM water_quality_site wq ,(select @id :=0)m
+      WHERE wq.code_region in
+      (SELECT area.area_id FROM area
+      <where>
+        <if test="areaName != null and areaName != ''">and area.area_name = #{areaName}</if>
+      </where>
+      )
+      <if test="stationName != null and stationName != ''">and wq.`name` like "%"#{stationName}"%"</if>
+      <if test="code != null and code != ''">and wq.`code` like "%"#{code}"%"</if>
+      <if test="page != null"> LIMIT #{page} ,#{size}</if>
+    </select>
+
+
+    <select id="getHydrologyStation" resultType="com.suchness.waterquality.monitor.dto.HydrologyStation">
+      SELECT
+      (@id := @id+1) AS id,
+      wq.id as ids,
+      wq.station_name as stationName,
+      wq.station_id as stationId,
+      wq.code,
+      (SELECT area.area_name FROM area WHERE area.area_id = wq.code_region)	as areaName,
+      wq.longitude,
+      wq.latitude,
+      wq.high,
+      wq.create_time as createTime,
+      (SELECT dict.`name` FROM dict WHERE dict.id = wq.country_id)as country,
+      (SELECT drainage_area.`name` FROM drainage_area WHERE drainage_area.valley_id = wq.valley_id) as valleyName
+      FROM water_station wq ,(select @id :=0)m
+      WHERE wq.code_region in (SELECT area.area_id FROM area
+      <where>
+        <if test="areaName != null and areaName.size > 0 ">and area.area_name in
+          <foreach collection="areaName" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+        </if>
+      </where>
+      )
+      <if test="stationName != null and stationName != ''">and wq.station_name LIKE "%"#{stationName}"%"</if>
+      <if test="code != null and code != ''">and wq.`code` LIKE "%"#{code}"%"</if>
+    </select>
+</mapper>

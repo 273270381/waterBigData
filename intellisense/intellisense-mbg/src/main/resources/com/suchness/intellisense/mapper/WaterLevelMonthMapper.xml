@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.intellisense.mapper.WaterLevelMonthMapper">
+  <resultMap id="BaseResultMap" type="com.suchness.intellisense.model.WaterLevelMonth">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="stationId" jdbcType="VARCHAR" property="stationid" />
+    <result column="date" jdbcType="VARCHAR" property="date" />
+    <result column="one" jdbcType="DOUBLE" property="one" />
+    <result column="two" jdbcType="DOUBLE" property="two" />
+    <result column="three" jdbcType="DOUBLE" property="three" />
+    <result column="four" jdbcType="DOUBLE" property="four" />
+    <result column="five" jdbcType="DOUBLE" property="five" />
+    <result column="six" jdbcType="DOUBLE" property="six" />
+    <result column="seven" jdbcType="DOUBLE" property="seven" />
+    <result column="eight" jdbcType="DOUBLE" property="eight" />
+    <result column="nine" jdbcType="DOUBLE" property="nine" />
+    <result column="ten" jdbcType="DOUBLE" property="ten" />
+    <result column="eleven" jdbcType="DOUBLE" property="eleven" />
+    <result column="twelve" jdbcType="DOUBLE" property="twelve" />
+    <result column="thirteen" jdbcType="DOUBLE" property="thirteen" />
+    <result column="fourteen" jdbcType="DOUBLE" property="fourteen" />
+    <result column="fifteen" jdbcType="DOUBLE" property="fifteen" />
+    <result column="sixteen" jdbcType="DOUBLE" property="sixteen" />
+    <result column="seventeen" jdbcType="DOUBLE" property="seventeen" />
+    <result column="eighteen" jdbcType="DOUBLE" property="eighteen" />
+    <result column="nineteen" jdbcType="DOUBLE" property="nineteen" />
+    <result column="twenty" jdbcType="DOUBLE" property="twenty" />
+    <result column="twenty_one" jdbcType="DOUBLE" property="twentyOne" />
+    <result column="twenty_two" jdbcType="DOUBLE" property="twentyTwo" />
+    <result column="twenty_three" jdbcType="DOUBLE" property="twentyThree" />
+    <result column="twenty_four" jdbcType="DOUBLE" property="twentyFour" />
+    <result column="twenty_five" jdbcType="DOUBLE" property="twentyFive" />
+    <result column="twenty_six" jdbcType="DOUBLE" property="twentySix" />
+    <result column="twenty_seven" jdbcType="DOUBLE" property="twentySeven" />
+    <result column="twenty_eight" jdbcType="DOUBLE" property="twentyEight" />
+    <result column="twenty_nine" jdbcType="DOUBLE" property="twentyNine" />
+    <result column="thirty" jdbcType="DOUBLE" property="thirty" />
+    <result column="thirty_one" jdbcType="DOUBLE" property="thirtyOne" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, stationId, date, one, two, three, four, five, six, seven, eight, nine, ten, eleven, 
+    twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, 
+    twenty_one, twenty_two, twenty_three, twenty_four, twenty_five, twenty_six, twenty_seven, 
+    twenty_eight, twenty_nine, thirty, thirty_one
+  </sql>
+  <select id="selectByExample" parameterType="com.suchness.intellisense.model.WaterLevelMonthExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from water_level_month
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from water_level_month
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from water_level_month
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.suchness.intellisense.model.WaterLevelMonthExample">
+    delete from water_level_month
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.suchness.intellisense.model.WaterLevelMonth">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into water_level_month (stationId, date, one, 
+      two, three, four, five, 
+      six, seven, eight, nine, 
+      ten, eleven, twelve, thirteen, 
+      fourteen, fifteen, sixteen, 
+      seventeen, eighteen, nineteen, 
+      twenty, twenty_one, twenty_two, 
+      twenty_three, twenty_four, twenty_five, 
+      twenty_six, twenty_seven, twenty_eight, 
+      twenty_nine, thirty, thirty_one
+      )
+    values (#{stationid,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR}, #{one,jdbcType=DOUBLE}, 
+      #{two,jdbcType=DOUBLE}, #{three,jdbcType=DOUBLE}, #{four,jdbcType=DOUBLE}, #{five,jdbcType=DOUBLE}, 
+      #{six,jdbcType=DOUBLE}, #{seven,jdbcType=DOUBLE}, #{eight,jdbcType=DOUBLE}, #{nine,jdbcType=DOUBLE}, 
+      #{ten,jdbcType=DOUBLE}, #{eleven,jdbcType=DOUBLE}, #{twelve,jdbcType=DOUBLE}, #{thirteen,jdbcType=DOUBLE}, 
+      #{fourteen,jdbcType=DOUBLE}, #{fifteen,jdbcType=DOUBLE}, #{sixteen,jdbcType=DOUBLE}, 
+      #{seventeen,jdbcType=DOUBLE}, #{eighteen,jdbcType=DOUBLE}, #{nineteen,jdbcType=DOUBLE}, 
+      #{twenty,jdbcType=DOUBLE}, #{twentyOne,jdbcType=DOUBLE}, #{twentyTwo,jdbcType=DOUBLE}, 
+      #{twentyThree,jdbcType=DOUBLE}, #{twentyFour,jdbcType=DOUBLE}, #{twentyFive,jdbcType=DOUBLE}, 
+      #{twentySix,jdbcType=DOUBLE}, #{twentySeven,jdbcType=DOUBLE}, #{twentyEight,jdbcType=DOUBLE}, 
+      #{twentyNine,jdbcType=DOUBLE}, #{thirty,jdbcType=DOUBLE}, #{thirtyOne,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.suchness.intellisense.model.WaterLevelMonth">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into water_level_month
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stationid != null">
+        stationId,
+      </if>
+      <if test="date != null">
+        date,
+      </if>
+      <if test="one != null">
+        one,
+      </if>
+      <if test="two != null">
+        two,
+      </if>
+      <if test="three != null">
+        three,
+      </if>
+      <if test="four != null">
+        four,
+      </if>
+      <if test="five != null">
+        five,
+      </if>
+      <if test="six != null">
+        six,
+      </if>
+      <if test="seven != null">
+        seven,
+      </if>
+      <if test="eight != null">
+        eight,
+      </if>
+      <if test="nine != null">
+        nine,
+      </if>
+      <if test="ten != null">
+        ten,
+      </if>
+      <if test="eleven != null">
+        eleven,
+      </if>
+      <if test="twelve != null">
+        twelve,
+      </if>
+      <if test="thirteen != null">
+        thirteen,
+      </if>
+      <if test="fourteen != null">
+        fourteen,
+      </if>
+      <if test="fifteen != null">
+        fifteen,
+      </if>
+      <if test="sixteen != null">
+        sixteen,
+      </if>
+      <if test="seventeen != null">
+        seventeen,
+      </if>
+      <if test="eighteen != null">
+        eighteen,
+      </if>
+      <if test="nineteen != null">
+        nineteen,
+      </if>
+      <if test="twenty != null">
+        twenty,
+      </if>
+      <if test="twentyOne != null">
+        twenty_one,
+      </if>
+      <if test="twentyTwo != null">
+        twenty_two,
+      </if>
+      <if test="twentyThree != null">
+        twenty_three,
+      </if>
+      <if test="twentyFour != null">
+        twenty_four,
+      </if>
+      <if test="twentyFive != null">
+        twenty_five,
+      </if>
+      <if test="twentySix != null">
+        twenty_six,
+      </if>
+      <if test="twentySeven != null">
+        twenty_seven,
+      </if>
+      <if test="twentyEight != null">
+        twenty_eight,
+      </if>
+      <if test="twentyNine != null">
+        twenty_nine,
+      </if>
+      <if test="thirty != null">
+        thirty,
+      </if>
+      <if test="thirtyOne != null">
+        thirty_one,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stationid != null">
+        #{stationid,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="one != null">
+        #{one,jdbcType=DOUBLE},
+      </if>
+      <if test="two != null">
+        #{two,jdbcType=DOUBLE},
+      </if>
+      <if test="three != null">
+        #{three,jdbcType=DOUBLE},
+      </if>
+      <if test="four != null">
+        #{four,jdbcType=DOUBLE},
+      </if>
+      <if test="five != null">
+        #{five,jdbcType=DOUBLE},
+      </if>
+      <if test="six != null">
+        #{six,jdbcType=DOUBLE},
+      </if>
+      <if test="seven != null">
+        #{seven,jdbcType=DOUBLE},
+      </if>
+      <if test="eight != null">
+        #{eight,jdbcType=DOUBLE},
+      </if>
+      <if test="nine != null">
+        #{nine,jdbcType=DOUBLE},
+      </if>
+      <if test="ten != null">
+        #{ten,jdbcType=DOUBLE},
+      </if>
+      <if test="eleven != null">
+        #{eleven,jdbcType=DOUBLE},
+      </if>
+      <if test="twelve != null">
+        #{twelve,jdbcType=DOUBLE},
+      </if>
+      <if test="thirteen != null">
+        #{thirteen,jdbcType=DOUBLE},
+      </if>
+      <if test="fourteen != null">
+        #{fourteen,jdbcType=DOUBLE},
+      </if>
+      <if test="fifteen != null">
+        #{fifteen,jdbcType=DOUBLE},
+      </if>
+      <if test="sixteen != null">
+        #{sixteen,jdbcType=DOUBLE},
+      </if>
+      <if test="seventeen != null">
+        #{seventeen,jdbcType=DOUBLE},
+      </if>
+      <if test="eighteen != null">
+        #{eighteen,jdbcType=DOUBLE},
+      </if>
+      <if test="nineteen != null">
+        #{nineteen,jdbcType=DOUBLE},
+      </if>
+      <if test="twenty != null">
+        #{twenty,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyOne != null">
+        #{twentyOne,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyTwo != null">
+        #{twentyTwo,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyThree != null">
+        #{twentyThree,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyFour != null">
+        #{twentyFour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyFive != null">
+        #{twentyFive,jdbcType=DOUBLE},
+      </if>
+      <if test="twentySix != null">
+        #{twentySix,jdbcType=DOUBLE},
+      </if>
+      <if test="twentySeven != null">
+        #{twentySeven,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyEight != null">
+        #{twentyEight,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyNine != null">
+        #{twentyNine,jdbcType=DOUBLE},
+      </if>
+      <if test="thirty != null">
+        #{thirty,jdbcType=DOUBLE},
+      </if>
+      <if test="thirtyOne != null">
+        #{thirtyOne,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.suchness.intellisense.model.WaterLevelMonthExample" resultType="java.lang.Long">
+    select count(*) from water_level_month
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update water_level_month
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.stationid != null">
+        stationId = #{record.stationid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.date != null">
+        date = #{record.date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.one != null">
+        one = #{record.one,jdbcType=DOUBLE},
+      </if>
+      <if test="record.two != null">
+        two = #{record.two,jdbcType=DOUBLE},
+      </if>
+      <if test="record.three != null">
+        three = #{record.three,jdbcType=DOUBLE},
+      </if>
+      <if test="record.four != null">
+        four = #{record.four,jdbcType=DOUBLE},
+      </if>
+      <if test="record.five != null">
+        five = #{record.five,jdbcType=DOUBLE},
+      </if>
+      <if test="record.six != null">
+        six = #{record.six,jdbcType=DOUBLE},
+      </if>
+      <if test="record.seven != null">
+        seven = #{record.seven,jdbcType=DOUBLE},
+      </if>
+      <if test="record.eight != null">
+        eight = #{record.eight,jdbcType=DOUBLE},
+      </if>
+      <if test="record.nine != null">
+        nine = #{record.nine,jdbcType=DOUBLE},
+      </if>
+      <if test="record.ten != null">
+        ten = #{record.ten,jdbcType=DOUBLE},
+      </if>
+      <if test="record.eleven != null">
+        eleven = #{record.eleven,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twelve != null">
+        twelve = #{record.twelve,jdbcType=DOUBLE},
+      </if>
+      <if test="record.thirteen != null">
+        thirteen = #{record.thirteen,jdbcType=DOUBLE},
+      </if>
+      <if test="record.fourteen != null">
+        fourteen = #{record.fourteen,jdbcType=DOUBLE},
+      </if>
+      <if test="record.fifteen != null">
+        fifteen = #{record.fifteen,jdbcType=DOUBLE},
+      </if>
+      <if test="record.sixteen != null">
+        sixteen = #{record.sixteen,jdbcType=DOUBLE},
+      </if>
+      <if test="record.seventeen != null">
+        seventeen = #{record.seventeen,jdbcType=DOUBLE},
+      </if>
+      <if test="record.eighteen != null">
+        eighteen = #{record.eighteen,jdbcType=DOUBLE},
+      </if>
+      <if test="record.nineteen != null">
+        nineteen = #{record.nineteen,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twenty != null">
+        twenty = #{record.twenty,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentyOne != null">
+        twenty_one = #{record.twentyOne,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentyTwo != null">
+        twenty_two = #{record.twentyTwo,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentyThree != null">
+        twenty_three = #{record.twentyThree,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentyFour != null">
+        twenty_four = #{record.twentyFour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentyFive != null">
+        twenty_five = #{record.twentyFive,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentySix != null">
+        twenty_six = #{record.twentySix,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentySeven != null">
+        twenty_seven = #{record.twentySeven,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentyEight != null">
+        twenty_eight = #{record.twentyEight,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentyNine != null">
+        twenty_nine = #{record.twentyNine,jdbcType=DOUBLE},
+      </if>
+      <if test="record.thirty != null">
+        thirty = #{record.thirty,jdbcType=DOUBLE},
+      </if>
+      <if test="record.thirtyOne != null">
+        thirty_one = #{record.thirtyOne,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update water_level_month
+    set id = #{record.id,jdbcType=INTEGER},
+      stationId = #{record.stationid,jdbcType=VARCHAR},
+      date = #{record.date,jdbcType=VARCHAR},
+      one = #{record.one,jdbcType=DOUBLE},
+      two = #{record.two,jdbcType=DOUBLE},
+      three = #{record.three,jdbcType=DOUBLE},
+      four = #{record.four,jdbcType=DOUBLE},
+      five = #{record.five,jdbcType=DOUBLE},
+      six = #{record.six,jdbcType=DOUBLE},
+      seven = #{record.seven,jdbcType=DOUBLE},
+      eight = #{record.eight,jdbcType=DOUBLE},
+      nine = #{record.nine,jdbcType=DOUBLE},
+      ten = #{record.ten,jdbcType=DOUBLE},
+      eleven = #{record.eleven,jdbcType=DOUBLE},
+      twelve = #{record.twelve,jdbcType=DOUBLE},
+      thirteen = #{record.thirteen,jdbcType=DOUBLE},
+      fourteen = #{record.fourteen,jdbcType=DOUBLE},
+      fifteen = #{record.fifteen,jdbcType=DOUBLE},
+      sixteen = #{record.sixteen,jdbcType=DOUBLE},
+      seventeen = #{record.seventeen,jdbcType=DOUBLE},
+      eighteen = #{record.eighteen,jdbcType=DOUBLE},
+      nineteen = #{record.nineteen,jdbcType=DOUBLE},
+      twenty = #{record.twenty,jdbcType=DOUBLE},
+      twenty_one = #{record.twentyOne,jdbcType=DOUBLE},
+      twenty_two = #{record.twentyTwo,jdbcType=DOUBLE},
+      twenty_three = #{record.twentyThree,jdbcType=DOUBLE},
+      twenty_four = #{record.twentyFour,jdbcType=DOUBLE},
+      twenty_five = #{record.twentyFive,jdbcType=DOUBLE},
+      twenty_six = #{record.twentySix,jdbcType=DOUBLE},
+      twenty_seven = #{record.twentySeven,jdbcType=DOUBLE},
+      twenty_eight = #{record.twentyEight,jdbcType=DOUBLE},
+      twenty_nine = #{record.twentyNine,jdbcType=DOUBLE},
+      thirty = #{record.thirty,jdbcType=DOUBLE},
+      thirty_one = #{record.thirtyOne,jdbcType=DOUBLE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.suchness.intellisense.model.WaterLevelMonth">
+    update water_level_month
+    <set>
+      <if test="stationid != null">
+        stationId = #{stationid,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="one != null">
+        one = #{one,jdbcType=DOUBLE},
+      </if>
+      <if test="two != null">
+        two = #{two,jdbcType=DOUBLE},
+      </if>
+      <if test="three != null">
+        three = #{three,jdbcType=DOUBLE},
+      </if>
+      <if test="four != null">
+        four = #{four,jdbcType=DOUBLE},
+      </if>
+      <if test="five != null">
+        five = #{five,jdbcType=DOUBLE},
+      </if>
+      <if test="six != null">
+        six = #{six,jdbcType=DOUBLE},
+      </if>
+      <if test="seven != null">
+        seven = #{seven,jdbcType=DOUBLE},
+      </if>
+      <if test="eight != null">
+        eight = #{eight,jdbcType=DOUBLE},
+      </if>
+      <if test="nine != null">
+        nine = #{nine,jdbcType=DOUBLE},
+      </if>
+      <if test="ten != null">
+        ten = #{ten,jdbcType=DOUBLE},
+      </if>
+      <if test="eleven != null">
+        eleven = #{eleven,jdbcType=DOUBLE},
+      </if>
+      <if test="twelve != null">
+        twelve = #{twelve,jdbcType=DOUBLE},
+      </if>
+      <if test="thirteen != null">
+        thirteen = #{thirteen,jdbcType=DOUBLE},
+      </if>
+      <if test="fourteen != null">
+        fourteen = #{fourteen,jdbcType=DOUBLE},
+      </if>
+      <if test="fifteen != null">
+        fifteen = #{fifteen,jdbcType=DOUBLE},
+      </if>
+      <if test="sixteen != null">
+        sixteen = #{sixteen,jdbcType=DOUBLE},
+      </if>
+      <if test="seventeen != null">
+        seventeen = #{seventeen,jdbcType=DOUBLE},
+      </if>
+      <if test="eighteen != null">
+        eighteen = #{eighteen,jdbcType=DOUBLE},
+      </if>
+      <if test="nineteen != null">
+        nineteen = #{nineteen,jdbcType=DOUBLE},
+      </if>
+      <if test="twenty != null">
+        twenty = #{twenty,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyOne != null">
+        twenty_one = #{twentyOne,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyTwo != null">
+        twenty_two = #{twentyTwo,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyThree != null">
+        twenty_three = #{twentyThree,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyFour != null">
+        twenty_four = #{twentyFour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyFive != null">
+        twenty_five = #{twentyFive,jdbcType=DOUBLE},
+      </if>
+      <if test="twentySix != null">
+        twenty_six = #{twentySix,jdbcType=DOUBLE},
+      </if>
+      <if test="twentySeven != null">
+        twenty_seven = #{twentySeven,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyEight != null">
+        twenty_eight = #{twentyEight,jdbcType=DOUBLE},
+      </if>
+      <if test="twentyNine != null">
+        twenty_nine = #{twentyNine,jdbcType=DOUBLE},
+      </if>
+      <if test="thirty != null">
+        thirty = #{thirty,jdbcType=DOUBLE},
+      </if>
+      <if test="thirtyOne != null">
+        thirty_one = #{thirtyOne,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.suchness.intellisense.model.WaterLevelMonth">
+    update water_level_month
+    set stationId = #{stationid,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR},
+      one = #{one,jdbcType=DOUBLE},
+      two = #{two,jdbcType=DOUBLE},
+      three = #{three,jdbcType=DOUBLE},
+      four = #{four,jdbcType=DOUBLE},
+      five = #{five,jdbcType=DOUBLE},
+      six = #{six,jdbcType=DOUBLE},
+      seven = #{seven,jdbcType=DOUBLE},
+      eight = #{eight,jdbcType=DOUBLE},
+      nine = #{nine,jdbcType=DOUBLE},
+      ten = #{ten,jdbcType=DOUBLE},
+      eleven = #{eleven,jdbcType=DOUBLE},
+      twelve = #{twelve,jdbcType=DOUBLE},
+      thirteen = #{thirteen,jdbcType=DOUBLE},
+      fourteen = #{fourteen,jdbcType=DOUBLE},
+      fifteen = #{fifteen,jdbcType=DOUBLE},
+      sixteen = #{sixteen,jdbcType=DOUBLE},
+      seventeen = #{seventeen,jdbcType=DOUBLE},
+      eighteen = #{eighteen,jdbcType=DOUBLE},
+      nineteen = #{nineteen,jdbcType=DOUBLE},
+      twenty = #{twenty,jdbcType=DOUBLE},
+      twenty_one = #{twentyOne,jdbcType=DOUBLE},
+      twenty_two = #{twentyTwo,jdbcType=DOUBLE},
+      twenty_three = #{twentyThree,jdbcType=DOUBLE},
+      twenty_four = #{twentyFour,jdbcType=DOUBLE},
+      twenty_five = #{twentyFive,jdbcType=DOUBLE},
+      twenty_six = #{twentySix,jdbcType=DOUBLE},
+      twenty_seven = #{twentySeven,jdbcType=DOUBLE},
+      twenty_eight = #{twentyEight,jdbcType=DOUBLE},
+      twenty_nine = #{twentyNine,jdbcType=DOUBLE},
+      thirty = #{thirty,jdbcType=DOUBLE},
+      thirty_one = #{thirtyOne,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

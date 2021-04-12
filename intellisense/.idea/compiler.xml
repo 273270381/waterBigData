@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="data-acquisition" />
+        <module name="data-computation" />
+        <module name="floodcontrol-earlywarning" />
+        <module name="intellisense-auth" />
+        <module name="intellisense-common" />
+        <module name="intellisense-gateway" />
+        <module name="intellisense-mbg" />
+        <module name="intellisense-user" />
+        <module name="river-patorl" />
+        <module name="waterquality-monitor" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="data-acquisition" target="1.8" />
+      <module name="data-computation" target="1.8" />
+      <module name="floodcontrol-earlywarning" target="1.8" />
+      <module name="intellisense" target="1.8" />
+      <module name="intellisense-auth" target="1.8" />
+      <module name="intellisense-common" target="1.8" />
+      <module name="intellisense-gateway" target="1.8" />
+      <module name="intellisense-mbg" target="1.8" />
+      <module name="intellisense-user" target="1.8" />
+      <module name="river-patorl" target="1.8" />
+      <module name="waterquality-monitor" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="data-acquisition" options="-parameters" />
+      <module name="data-computation" options="-parameters" />
+      <module name="floodcontrol-earlywarning" options="-parameters" />
+      <module name="intellisense-auth" options="-parameters" />
+      <module name="intellisense-common" options="-parameters" />
+      <module name="intellisense-gateway" options="-parameters" />
+      <module name="intellisense-mbg" options="-parameters" />
+      <module name="intellisense-user" options="-parameters" />
+      <module name="river-patorl" options="-parameters" />
+      <module name="waterquality-monitor" options="-parameters" />
+    </option>
+  </component>
+</project>

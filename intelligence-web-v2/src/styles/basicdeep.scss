@@ -1,0 +1,76 @@
+/deep/.el-table,/deep/.el-table__expanded-cell{
+  background-color: transparent;
+}
+/deep/.el-table--border,/deep/.el-table--group{
+  border: 0 !important;
+}
+/deep/.el-table--border td, /deep/.el-table--border th, /deep/.el-table__body-wrapper /deep/.el-table--border.is-scrolling-left~.el-table__fixed{
+  border-right: 0;
+}
+/deep/.el-table td, /deep/.el-table th.is-leaf{
+  border-bottom:1px solid #19758D;
+}
+/deep/.el-table--border::after, .el-table--group::after{
+  width: 0px;
+}
+/deep/.el-table::before{
+  height: 0px;
+}
+/deep/ .el-table th{
+  color: white;
+  background-color:#041A2F;
+}
+/deep/.el-table tr{
+  color: white;
+  background-color:transparent;
+}
+/deep/.el-table tr:hover>td{
+  background-color: #8a6d3b!important;
+}
+/deep/.el-table tr.current-row>td{
+  background-color: #8a6d3b!important;
+}
+/deep/ .el-date-editor .el-range__icon{
+  color: #20B2AA !important;
+}
+
+/deep/ .el-input__inner {
+  border: 1px solid #20B2AA;
+  color:#ffffff;
+  background: transparent !important;
+}
+
+/deep/ .el-select-dropdown__list{
+  background-color: #041A2F !important;
+}
+/deep/.el-select-dropdown__item{
+  color:white;
+}
+/deep/.el-select-dropdown__item:hover,/deep/.el-select-dropdown__item.hover{
+  background-color: #8a6d3b!important;
+}
+/deep/.el-date-editor /deep/input::-webkit-input-placeholder, /deep/.el-select /deep/input::-webkit-input-placeholder{
+  color: white !important;
+}
+/deep/.el-date-editor /deep/input::-moz-input-placeholder, /deep/.el-select /deep/input::-moz-input-placeholder {
+  color: white !important;
+}
+/deep/.el-date-editor /deep/input::-ms-input-placeholder, /deep/.el-select /deep/input::-ms-input-placeholder {
+  color: white !important;
+}
+/deep/.el-date-editor .el-range-input{
+  background-color: transparent!important;
+  color: white!important;
+}
+/deep/.el-date-editor .el-range-separator{
+  color: white!important;
+}
+/deep/.el-pagination.is-background /deep/.btn-next,/deep/.el-pagination.is-background /deep/.btn-prev, /deep/.el-pagination.is-background /deep/.el-pager li{
+  background-color: transparent!important;
+  border: 1px solid #20B2AA!important;
+}
+/deep/.el-pagination.is-background /deep/.el-pagination__jump, /deep/.el-pagination.is-background /deep/.el-pagination__total{
+  color: white;
+}
+
+

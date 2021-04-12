@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/data-acquisition/data-acquisition.iml" filepath="$PROJECT_DIR$/data-acquisition/data-acquisition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-computation/data-computation.iml" filepath="$PROJECT_DIR$/data-computation/data-computation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/floodcontrol-earlywarning/floodcontrol-earlywarning.iml" filepath="$PROJECT_DIR$/floodcontrol-earlywarning/floodcontrol-earlywarning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/intellisense.iml" filepath="$PROJECT_DIR$/.idea/intellisense.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intellisense-auth/intellisense-auth.iml" filepath="$PROJECT_DIR$/intellisense-auth/intellisense-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intellisense-common/intellisense-common.iml" filepath="$PROJECT_DIR$/intellisense-common/intellisense-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intellisense-gateway/intellisense-gateway.iml" filepath="$PROJECT_DIR$/intellisense-gateway/intellisense-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intellisense-mbg/intellisense-mbg.iml" filepath="$PROJECT_DIR$/intellisense-mbg/intellisense-mbg.iml" />
+      <module fileurl="file://$PROJECT_DIR$/intellisense-user/intellisense-user.iml" filepath="$PROJECT_DIR$/intellisense-user/intellisense-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/river-patorl/river-patorl.iml" filepath="$PROJECT_DIR$/river-patorl/river-patorl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/waterquality-monitor/waterquality-monitor.iml" filepath="$PROJECT_DIR$/waterquality-monitor/waterquality-monitor.iml" />
+    </modules>
+  </component>
+</project>

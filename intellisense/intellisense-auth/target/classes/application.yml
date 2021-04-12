@@ -1,0 +1,13 @@
+server:
+  port: 8401
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+feign:
+  okhttp:
+    enabled: true
+ribbon:
+  ConnectTimeout: 3000 #�����������ӳ�ʱʱ�䣨���룩
+  ReadTimeout: 3000 #����������ʱʱ�䣨���룩

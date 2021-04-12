@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/api/basicInfo.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/api/waterQualityAlarm.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/alarm/count/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/area/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/department/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/drainagearea/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/revermanagers/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/rivers/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/station/hydrology/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/station/waterquality/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/station/waterquality/waterquality.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/watercategory/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/basicinfo/waterfeatures/index.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/layout/Layout.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../intelligence-web-new/src/views/layout/Layout2.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-acquisition" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/data-computation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/floodcontrol-earlywarning" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intellisense-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intellisense-auth/src/main/java/com/suchness/intellisense/auth/IntellisenseAuthApplication.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/intellisense-auth/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/intellisense-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intellisense-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intellisense-mbg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intellisense-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/intellisense-user/src/main/java/com/suchness/intellisense/user/IntellisenseUserApplication.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/intellisense-user/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/river-patorl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/waterquality-monitor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/WaterqualityMonitorApplication.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/controller/WaterStationController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/AlarmServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/waterquality-monitor/src/main/java/com/suchness/waterquality/monitor/service/impl/StationServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/waterquality-monitor/src/main/resources/application.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/waterquality-monitor/src/main/resources/bootstrap-dev.yml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/waterquality-monitor/src/main/resources/bootstrap.yml" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

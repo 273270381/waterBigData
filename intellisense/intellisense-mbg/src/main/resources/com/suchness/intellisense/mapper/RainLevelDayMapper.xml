@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.intellisense.mapper.RainLevelDayMapper">
+  <resultMap id="BaseResultMap" type="com.suchness.intellisense.model.RainLevelDay">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="station_id" jdbcType="VARCHAR" property="stationId" />
+    <result column="day" jdbcType="VARCHAR" property="day" />
+    <result column="zero_hour" jdbcType="DOUBLE" property="zeroHour" />
+    <result column="first_hour" jdbcType="DOUBLE" property="firstHour" />
+    <result column="second_hour" jdbcType="DOUBLE" property="secondHour" />
+    <result column="third_hour" jdbcType="DOUBLE" property="thirdHour" />
+    <result column="fourth_hour" jdbcType="DOUBLE" property="fourthHour" />
+    <result column="fifth_hour" jdbcType="DOUBLE" property="fifthHour" />
+    <result column="sixth_hour" jdbcType="DOUBLE" property="sixthHour" />
+    <result column="seventh_hour" jdbcType="DOUBLE" property="seventhHour" />
+    <result column="eighth_hour" jdbcType="DOUBLE" property="eighthHour" />
+    <result column="ninth_hour" jdbcType="DOUBLE" property="ninthHour" />
+    <result column="tenth_hour" jdbcType="DOUBLE" property="tenthHour" />
+    <result column="eleventh_hour" jdbcType="DOUBLE" property="eleventhHour" />
+    <result column="twelfth_hour" jdbcType="DOUBLE" property="twelfthHour" />
+    <result column="thirteenth_hour" jdbcType="DOUBLE" property="thirteenthHour" />
+    <result column="fourteenth_hour" jdbcType="DOUBLE" property="fourteenthHour" />
+    <result column="fifteenth_hour" jdbcType="DOUBLE" property="fifteenthHour" />
+    <result column="sixteenth_hour" jdbcType="DOUBLE" property="sixteenthHour" />
+    <result column="seventeenth_hour" jdbcType="DOUBLE" property="seventeenthHour" />
+    <result column="eighteenth_hour" jdbcType="DOUBLE" property="eighteenthHour" />
+    <result column="nineteenth_hour" jdbcType="DOUBLE" property="nineteenthHour" />
+    <result column="twentieth_hour" jdbcType="DOUBLE" property="twentiethHour" />
+    <result column="twentieth_first_hour" jdbcType="DOUBLE" property="twentiethFirstHour" />
+    <result column="twentieth_two_hour" jdbcType="DOUBLE" property="twentiethTwoHour" />
+    <result column="twentieth_three_hour" jdbcType="DOUBLE" property="twentiethThreeHour" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, station_id, day, zero_hour, first_hour, second_hour, third_hour, fourth_hour, 
+    fifth_hour, sixth_hour, seventh_hour, eighth_hour, ninth_hour, tenth_hour, eleventh_hour, 
+    twelfth_hour, thirteenth_hour, fourteenth_hour, fifteenth_hour, sixteenth_hour, seventeenth_hour, 
+    eighteenth_hour, nineteenth_hour, twentieth_hour, twentieth_first_hour, twentieth_two_hour, 
+    twentieth_three_hour
+  </sql>
+  <select id="selectByExample" parameterType="com.suchness.intellisense.model.RainLevelDayExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from rain_level_day
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rain_level_day
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rain_level_day
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.suchness.intellisense.model.RainLevelDayExample">
+    delete from rain_level_day
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.suchness.intellisense.model.RainLevelDay">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into rain_level_day (station_id, day, zero_hour, 
+      first_hour, second_hour, third_hour, 
+      fourth_hour, fifth_hour, sixth_hour, 
+      seventh_hour, eighth_hour, ninth_hour, 
+      tenth_hour, eleventh_hour, twelfth_hour, 
+      thirteenth_hour, fourteenth_hour, fifteenth_hour, 
+      sixteenth_hour, seventeenth_hour, eighteenth_hour, 
+      nineteenth_hour, twentieth_hour, twentieth_first_hour, 
+      twentieth_two_hour, twentieth_three_hour)
+    values (#{stationId,jdbcType=VARCHAR}, #{day,jdbcType=VARCHAR}, #{zeroHour,jdbcType=DOUBLE}, 
+      #{firstHour,jdbcType=DOUBLE}, #{secondHour,jdbcType=DOUBLE}, #{thirdHour,jdbcType=DOUBLE}, 
+      #{fourthHour,jdbcType=DOUBLE}, #{fifthHour,jdbcType=DOUBLE}, #{sixthHour,jdbcType=DOUBLE}, 
+      #{seventhHour,jdbcType=DOUBLE}, #{eighthHour,jdbcType=DOUBLE}, #{ninthHour,jdbcType=DOUBLE}, 
+      #{tenthHour,jdbcType=DOUBLE}, #{eleventhHour,jdbcType=DOUBLE}, #{twelfthHour,jdbcType=DOUBLE}, 
+      #{thirteenthHour,jdbcType=DOUBLE}, #{fourteenthHour,jdbcType=DOUBLE}, #{fifteenthHour,jdbcType=DOUBLE}, 
+      #{sixteenthHour,jdbcType=DOUBLE}, #{seventeenthHour,jdbcType=DOUBLE}, #{eighteenthHour,jdbcType=DOUBLE}, 
+      #{nineteenthHour,jdbcType=DOUBLE}, #{twentiethHour,jdbcType=DOUBLE}, #{twentiethFirstHour,jdbcType=DOUBLE}, 
+      #{twentiethTwoHour,jdbcType=DOUBLE}, #{twentiethThreeHour,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.suchness.intellisense.model.RainLevelDay">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into rain_level_day
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stationId != null">
+        station_id,
+      </if>
+      <if test="day != null">
+        day,
+      </if>
+      <if test="zeroHour != null">
+        zero_hour,
+      </if>
+      <if test="firstHour != null">
+        first_hour,
+      </if>
+      <if test="secondHour != null">
+        second_hour,
+      </if>
+      <if test="thirdHour != null">
+        third_hour,
+      </if>
+      <if test="fourthHour != null">
+        fourth_hour,
+      </if>
+      <if test="fifthHour != null">
+        fifth_hour,
+      </if>
+      <if test="sixthHour != null">
+        sixth_hour,
+      </if>
+      <if test="seventhHour != null">
+        seventh_hour,
+      </if>
+      <if test="eighthHour != null">
+        eighth_hour,
+      </if>
+      <if test="ninthHour != null">
+        ninth_hour,
+      </if>
+      <if test="tenthHour != null">
+        tenth_hour,
+      </if>
+      <if test="eleventhHour != null">
+        eleventh_hour,
+      </if>
+      <if test="twelfthHour != null">
+        twelfth_hour,
+      </if>
+      <if test="thirteenthHour != null">
+        thirteenth_hour,
+      </if>
+      <if test="fourteenthHour != null">
+        fourteenth_hour,
+      </if>
+      <if test="fifteenthHour != null">
+        fifteenth_hour,
+      </if>
+      <if test="sixteenthHour != null">
+        sixteenth_hour,
+      </if>
+      <if test="seventeenthHour != null">
+        seventeenth_hour,
+      </if>
+      <if test="eighteenthHour != null">
+        eighteenth_hour,
+      </if>
+      <if test="nineteenthHour != null">
+        nineteenth_hour,
+      </if>
+      <if test="twentiethHour != null">
+        twentieth_hour,
+      </if>
+      <if test="twentiethFirstHour != null">
+        twentieth_first_hour,
+      </if>
+      <if test="twentiethTwoHour != null">
+        twentieth_two_hour,
+      </if>
+      <if test="twentiethThreeHour != null">
+        twentieth_three_hour,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stationId != null">
+        #{stationId,jdbcType=VARCHAR},
+      </if>
+      <if test="day != null">
+        #{day,jdbcType=VARCHAR},
+      </if>
+      <if test="zeroHour != null">
+        #{zeroHour,jdbcType=DOUBLE},
+      </if>
+      <if test="firstHour != null">
+        #{firstHour,jdbcType=DOUBLE},
+      </if>
+      <if test="secondHour != null">
+        #{secondHour,jdbcType=DOUBLE},
+      </if>
+      <if test="thirdHour != null">
+        #{thirdHour,jdbcType=DOUBLE},
+      </if>
+      <if test="fourthHour != null">
+        #{fourthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="fifthHour != null">
+        #{fifthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="sixthHour != null">
+        #{sixthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="seventhHour != null">
+        #{seventhHour,jdbcType=DOUBLE},
+      </if>
+      <if test="eighthHour != null">
+        #{eighthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="ninthHour != null">
+        #{ninthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="tenthHour != null">
+        #{tenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="eleventhHour != null">
+        #{eleventhHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twelfthHour != null">
+        #{twelfthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="thirteenthHour != null">
+        #{thirteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="fourteenthHour != null">
+        #{fourteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="fifteenthHour != null">
+        #{fifteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="sixteenthHour != null">
+        #{sixteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="seventeenthHour != null">
+        #{seventeenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="eighteenthHour != null">
+        #{eighteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="nineteenthHour != null">
+        #{nineteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentiethHour != null">
+        #{twentiethHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentiethFirstHour != null">
+        #{twentiethFirstHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentiethTwoHour != null">
+        #{twentiethTwoHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentiethThreeHour != null">
+        #{twentiethThreeHour,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.suchness.intellisense.model.RainLevelDayExample" resultType="java.lang.Long">
+    select count(*) from rain_level_day
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update rain_level_day
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.stationId != null">
+        station_id = #{record.stationId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.day != null">
+        day = #{record.day,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zeroHour != null">
+        zero_hour = #{record.zeroHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.firstHour != null">
+        first_hour = #{record.firstHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.secondHour != null">
+        second_hour = #{record.secondHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.thirdHour != null">
+        third_hour = #{record.thirdHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.fourthHour != null">
+        fourth_hour = #{record.fourthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.fifthHour != null">
+        fifth_hour = #{record.fifthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.sixthHour != null">
+        sixth_hour = #{record.sixthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.seventhHour != null">
+        seventh_hour = #{record.seventhHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.eighthHour != null">
+        eighth_hour = #{record.eighthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.ninthHour != null">
+        ninth_hour = #{record.ninthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.tenthHour != null">
+        tenth_hour = #{record.tenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.eleventhHour != null">
+        eleventh_hour = #{record.eleventhHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twelfthHour != null">
+        twelfth_hour = #{record.twelfthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.thirteenthHour != null">
+        thirteenth_hour = #{record.thirteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.fourteenthHour != null">
+        fourteenth_hour = #{record.fourteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.fifteenthHour != null">
+        fifteenth_hour = #{record.fifteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.sixteenthHour != null">
+        sixteenth_hour = #{record.sixteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.seventeenthHour != null">
+        seventeenth_hour = #{record.seventeenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.eighteenthHour != null">
+        eighteenth_hour = #{record.eighteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.nineteenthHour != null">
+        nineteenth_hour = #{record.nineteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentiethHour != null">
+        twentieth_hour = #{record.twentiethHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentiethFirstHour != null">
+        twentieth_first_hour = #{record.twentiethFirstHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentiethTwoHour != null">
+        twentieth_two_hour = #{record.twentiethTwoHour,jdbcType=DOUBLE},
+      </if>
+      <if test="record.twentiethThreeHour != null">
+        twentieth_three_hour = #{record.twentiethThreeHour,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update rain_level_day
+    set id = #{record.id,jdbcType=INTEGER},
+      station_id = #{record.stationId,jdbcType=VARCHAR},
+      day = #{record.day,jdbcType=VARCHAR},
+      zero_hour = #{record.zeroHour,jdbcType=DOUBLE},
+      first_hour = #{record.firstHour,jdbcType=DOUBLE},
+      second_hour = #{record.secondHour,jdbcType=DOUBLE},
+      third_hour = #{record.thirdHour,jdbcType=DOUBLE},
+      fourth_hour = #{record.fourthHour,jdbcType=DOUBLE},
+      fifth_hour = #{record.fifthHour,jdbcType=DOUBLE},
+      sixth_hour = #{record.sixthHour,jdbcType=DOUBLE},
+      seventh_hour = #{record.seventhHour,jdbcType=DOUBLE},
+      eighth_hour = #{record.eighthHour,jdbcType=DOUBLE},
+      ninth_hour = #{record.ninthHour,jdbcType=DOUBLE},
+      tenth_hour = #{record.tenthHour,jdbcType=DOUBLE},
+      eleventh_hour = #{record.eleventhHour,jdbcType=DOUBLE},
+      twelfth_hour = #{record.twelfthHour,jdbcType=DOUBLE},
+      thirteenth_hour = #{record.thirteenthHour,jdbcType=DOUBLE},
+      fourteenth_hour = #{record.fourteenthHour,jdbcType=DOUBLE},
+      fifteenth_hour = #{record.fifteenthHour,jdbcType=DOUBLE},
+      sixteenth_hour = #{record.sixteenthHour,jdbcType=DOUBLE},
+      seventeenth_hour = #{record.seventeenthHour,jdbcType=DOUBLE},
+      eighteenth_hour = #{record.eighteenthHour,jdbcType=DOUBLE},
+      nineteenth_hour = #{record.nineteenthHour,jdbcType=DOUBLE},
+      twentieth_hour = #{record.twentiethHour,jdbcType=DOUBLE},
+      twentieth_first_hour = #{record.twentiethFirstHour,jdbcType=DOUBLE},
+      twentieth_two_hour = #{record.twentiethTwoHour,jdbcType=DOUBLE},
+      twentieth_three_hour = #{record.twentiethThreeHour,jdbcType=DOUBLE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.suchness.intellisense.model.RainLevelDay">
+    update rain_level_day
+    <set>
+      <if test="stationId != null">
+        station_id = #{stationId,jdbcType=VARCHAR},
+      </if>
+      <if test="day != null">
+        day = #{day,jdbcType=VARCHAR},
+      </if>
+      <if test="zeroHour != null">
+        zero_hour = #{zeroHour,jdbcType=DOUBLE},
+      </if>
+      <if test="firstHour != null">
+        first_hour = #{firstHour,jdbcType=DOUBLE},
+      </if>
+      <if test="secondHour != null">
+        second_hour = #{secondHour,jdbcType=DOUBLE},
+      </if>
+      <if test="thirdHour != null">
+        third_hour = #{thirdHour,jdbcType=DOUBLE},
+      </if>
+      <if test="fourthHour != null">
+        fourth_hour = #{fourthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="fifthHour != null">
+        fifth_hour = #{fifthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="sixthHour != null">
+        sixth_hour = #{sixthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="seventhHour != null">
+        seventh_hour = #{seventhHour,jdbcType=DOUBLE},
+      </if>
+      <if test="eighthHour != null">
+        eighth_hour = #{eighthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="ninthHour != null">
+        ninth_hour = #{ninthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="tenthHour != null">
+        tenth_hour = #{tenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="eleventhHour != null">
+        eleventh_hour = #{eleventhHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twelfthHour != null">
+        twelfth_hour = #{twelfthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="thirteenthHour != null">
+        thirteenth_hour = #{thirteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="fourteenthHour != null">
+        fourteenth_hour = #{fourteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="fifteenthHour != null">
+        fifteenth_hour = #{fifteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="sixteenthHour != null">
+        sixteenth_hour = #{sixteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="seventeenthHour != null">
+        seventeenth_hour = #{seventeenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="eighteenthHour != null">
+        eighteenth_hour = #{eighteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="nineteenthHour != null">
+        nineteenth_hour = #{nineteenthHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentiethHour != null">
+        twentieth_hour = #{twentiethHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentiethFirstHour != null">
+        twentieth_first_hour = #{twentiethFirstHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentiethTwoHour != null">
+        twentieth_two_hour = #{twentiethTwoHour,jdbcType=DOUBLE},
+      </if>
+      <if test="twentiethThreeHour != null">
+        twentieth_three_hour = #{twentiethThreeHour,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.suchness.intellisense.model.RainLevelDay">
+    update rain_level_day
+    set station_id = #{stationId,jdbcType=VARCHAR},
+      day = #{day,jdbcType=VARCHAR},
+      zero_hour = #{zeroHour,jdbcType=DOUBLE},
+      first_hour = #{firstHour,jdbcType=DOUBLE},
+      second_hour = #{secondHour,jdbcType=DOUBLE},
+      third_hour = #{thirdHour,jdbcType=DOUBLE},
+      fourth_hour = #{fourthHour,jdbcType=DOUBLE},
+      fifth_hour = #{fifthHour,jdbcType=DOUBLE},
+      sixth_hour = #{sixthHour,jdbcType=DOUBLE},
+      seventh_hour = #{seventhHour,jdbcType=DOUBLE},
+      eighth_hour = #{eighthHour,jdbcType=DOUBLE},
+      ninth_hour = #{ninthHour,jdbcType=DOUBLE},
+      tenth_hour = #{tenthHour,jdbcType=DOUBLE},
+      eleventh_hour = #{eleventhHour,jdbcType=DOUBLE},
+      twelfth_hour = #{twelfthHour,jdbcType=DOUBLE},
+      thirteenth_hour = #{thirteenthHour,jdbcType=DOUBLE},
+      fourteenth_hour = #{fourteenthHour,jdbcType=DOUBLE},
+      fifteenth_hour = #{fifteenthHour,jdbcType=DOUBLE},
+      sixteenth_hour = #{sixteenthHour,jdbcType=DOUBLE},
+      seventeenth_hour = #{seventeenthHour,jdbcType=DOUBLE},
+      eighteenth_hour = #{eighteenthHour,jdbcType=DOUBLE},
+      nineteenth_hour = #{nineteenthHour,jdbcType=DOUBLE},
+      twentieth_hour = #{twentiethHour,jdbcType=DOUBLE},
+      twentieth_first_hour = #{twentiethFirstHour,jdbcType=DOUBLE},
+      twentieth_two_hour = #{twentiethTwoHour,jdbcType=DOUBLE},
+      twentieth_three_hour = #{twentiethThreeHour,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.waterquality.monitor.dao.BasicInfoDao">
+    <select id="getWaterCategory" resultType="com.suchness.waterquality.monitor.dto.WaterQualityCategory">
+    SELECT
+        (@id := @id+1) AS id,
+        wqc.name,
+        wqc.lever,
+        dict.name as status,
+        wqc.color,
+        wqc.des
+      FROM water_quality_category as wqc
+        LEFT JOIN dict ON wqc.status_id = dict.id,(select @id :=0)m
+    </select>
+
+    <select id="getRivers" resultType="com.suchness.waterquality.monitor.dto.RiversInfo">
+      SELECT
+      (@id := @id+1) AS id,
+      rivers.riverName,
+      (SELECT dict.`name` FROM dict WHERE rivers.lever_id = dict.id) as lever,
+      rivers.length,
+      rivers.valleyAcreage,
+      rivers.waterAcreage,
+      r.name as managername,
+      r.post
+      FROM
+      rivers
+      LEFT JOIN
+      river_managers as r ON rivers.name_id = r.id ,(select @id :=0)m
+      <where>
+        <if test="riverName != null and riverName != ''">and rivers.riverName LIKE "%"#{riverName}"%"</if>
+        <if test="valleyAcreage != null and valleyAcreage != ''">and rivers.valleyAcreage >#{valleyAcreage}</if>
+      </where>
+    </select>
+</mapper>

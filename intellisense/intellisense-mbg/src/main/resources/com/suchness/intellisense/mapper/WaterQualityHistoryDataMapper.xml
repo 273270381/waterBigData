@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.intellisense.mapper.WaterQualityHistoryDataMapper">
+  <resultMap id="BaseResultMap" type="com.suchness.intellisense.model.WaterQualityHistoryData">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="site_id" jdbcType="INTEGER" property="siteId" />
+    <result column="date_time" jdbcType="TIMESTAMP" property="dateTime" />
+    <result column="w01001_Rtd" jdbcType="REAL" property="w01001Rtd" />
+    <result column="w01001_Flag" jdbcType="VARCHAR" property="w01001Flag" />
+    <result column="w01019_Rtd" jdbcType="REAL" property="w01019Rtd" />
+    <result column="w01019_Flag" jdbcType="VARCHAR" property="w01019Flag" />
+    <result column="w21011_Rtd" jdbcType="REAL" property="w21011Rtd" />
+    <result column="w21011_Flag" jdbcType="VARCHAR" property="w21011Flag" />
+    <result column="w21003_Rtd" jdbcType="REAL" property="w21003Rtd" />
+    <result column="w21003_Flag" jdbcType="VARCHAR" property="w21003Flag" />
+    <result column="w01010_Rtd" jdbcType="REAL" property="w01010Rtd" />
+    <result column="w01010_Flag" jdbcType="VARCHAR" property="w01010Flag" />
+    <result column="w01009_Rtd" jdbcType="REAL" property="w01009Rtd" />
+    <result column="w01009_Flag" jdbcType="VARCHAR" property="w01009Flag" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, site_id, date_time, w01001_Rtd, w01001_Flag, w01019_Rtd, w01019_Flag, w21011_Rtd, 
+    w21011_Flag, w21003_Rtd, w21003_Flag, w01010_Rtd, w01010_Flag, w01009_Rtd, w01009_Flag
+  </sql>
+  <select id="selectByExample" parameterType="com.suchness.intellisense.model.WaterQualityHistoryDataExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from water_quality_history_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from water_quality_history_data
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from water_quality_history_data
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.suchness.intellisense.model.WaterQualityHistoryDataExample">
+    delete from water_quality_history_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.suchness.intellisense.model.WaterQualityHistoryData">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into water_quality_history_data (site_id, date_time, w01001_Rtd, 
+      w01001_Flag, w01019_Rtd, w01019_Flag, 
+      w21011_Rtd, w21011_Flag, w21003_Rtd, 
+      w21003_Flag, w01010_Rtd, w01010_Flag, 
+      w01009_Rtd, w01009_Flag)
+    values (#{siteId,jdbcType=INTEGER}, #{dateTime,jdbcType=TIMESTAMP}, #{w01001Rtd,jdbcType=REAL}, 
+      #{w01001Flag,jdbcType=VARCHAR}, #{w01019Rtd,jdbcType=REAL}, #{w01019Flag,jdbcType=VARCHAR}, 
+      #{w21011Rtd,jdbcType=REAL}, #{w21011Flag,jdbcType=VARCHAR}, #{w21003Rtd,jdbcType=REAL}, 
+      #{w21003Flag,jdbcType=VARCHAR}, #{w01010Rtd,jdbcType=REAL}, #{w01010Flag,jdbcType=VARCHAR}, 
+      #{w01009Rtd,jdbcType=REAL}, #{w01009Flag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.suchness.intellisense.model.WaterQualityHistoryData">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into water_quality_history_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="siteId != null">
+        site_id,
+      </if>
+      <if test="dateTime != null">
+        date_time,
+      </if>
+      <if test="w01001Rtd != null">
+        w01001_Rtd,
+      </if>
+      <if test="w01001Flag != null">
+        w01001_Flag,
+      </if>
+      <if test="w01019Rtd != null">
+        w01019_Rtd,
+      </if>
+      <if test="w01019Flag != null">
+        w01019_Flag,
+      </if>
+      <if test="w21011Rtd != null">
+        w21011_Rtd,
+      </if>
+      <if test="w21011Flag != null">
+        w21011_Flag,
+      </if>
+      <if test="w21003Rtd != null">
+        w21003_Rtd,
+      </if>
+      <if test="w21003Flag != null">
+        w21003_Flag,
+      </if>
+      <if test="w01010Rtd != null">
+        w01010_Rtd,
+      </if>
+      <if test="w01010Flag != null">
+        w01010_Flag,
+      </if>
+      <if test="w01009Rtd != null">
+        w01009_Rtd,
+      </if>
+      <if test="w01009Flag != null">
+        w01009_Flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="siteId != null">
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="dateTime != null">
+        #{dateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="w01001Rtd != null">
+        #{w01001Rtd,jdbcType=REAL},
+      </if>
+      <if test="w01001Flag != null">
+        #{w01001Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w01019Rtd != null">
+        #{w01019Rtd,jdbcType=REAL},
+      </if>
+      <if test="w01019Flag != null">
+        #{w01019Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w21011Rtd != null">
+        #{w21011Rtd,jdbcType=REAL},
+      </if>
+      <if test="w21011Flag != null">
+        #{w21011Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w21003Rtd != null">
+        #{w21003Rtd,jdbcType=REAL},
+      </if>
+      <if test="w21003Flag != null">
+        #{w21003Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w01010Rtd != null">
+        #{w01010Rtd,jdbcType=REAL},
+      </if>
+      <if test="w01010Flag != null">
+        #{w01010Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w01009Rtd != null">
+        #{w01009Rtd,jdbcType=REAL},
+      </if>
+      <if test="w01009Flag != null">
+        #{w01009Flag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.suchness.intellisense.model.WaterQualityHistoryDataExample" resultType="java.lang.Long">
+    select count(*) from water_quality_history_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update water_quality_history_data
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.siteId != null">
+        site_id = #{record.siteId,jdbcType=INTEGER},
+      </if>
+      <if test="record.dateTime != null">
+        date_time = #{record.dateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.w01001Rtd != null">
+        w01001_Rtd = #{record.w01001Rtd,jdbcType=REAL},
+      </if>
+      <if test="record.w01001Flag != null">
+        w01001_Flag = #{record.w01001Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.w01019Rtd != null">
+        w01019_Rtd = #{record.w01019Rtd,jdbcType=REAL},
+      </if>
+      <if test="record.w01019Flag != null">
+        w01019_Flag = #{record.w01019Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.w21011Rtd != null">
+        w21011_Rtd = #{record.w21011Rtd,jdbcType=REAL},
+      </if>
+      <if test="record.w21011Flag != null">
+        w21011_Flag = #{record.w21011Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.w21003Rtd != null">
+        w21003_Rtd = #{record.w21003Rtd,jdbcType=REAL},
+      </if>
+      <if test="record.w21003Flag != null">
+        w21003_Flag = #{record.w21003Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.w01010Rtd != null">
+        w01010_Rtd = #{record.w01010Rtd,jdbcType=REAL},
+      </if>
+      <if test="record.w01010Flag != null">
+        w01010_Flag = #{record.w01010Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.w01009Rtd != null">
+        w01009_Rtd = #{record.w01009Rtd,jdbcType=REAL},
+      </if>
+      <if test="record.w01009Flag != null">
+        w01009_Flag = #{record.w01009Flag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update water_quality_history_data
+    set id = #{record.id,jdbcType=INTEGER},
+      site_id = #{record.siteId,jdbcType=INTEGER},
+      date_time = #{record.dateTime,jdbcType=TIMESTAMP},
+      w01001_Rtd = #{record.w01001Rtd,jdbcType=REAL},
+      w01001_Flag = #{record.w01001Flag,jdbcType=VARCHAR},
+      w01019_Rtd = #{record.w01019Rtd,jdbcType=REAL},
+      w01019_Flag = #{record.w01019Flag,jdbcType=VARCHAR},
+      w21011_Rtd = #{record.w21011Rtd,jdbcType=REAL},
+      w21011_Flag = #{record.w21011Flag,jdbcType=VARCHAR},
+      w21003_Rtd = #{record.w21003Rtd,jdbcType=REAL},
+      w21003_Flag = #{record.w21003Flag,jdbcType=VARCHAR},
+      w01010_Rtd = #{record.w01010Rtd,jdbcType=REAL},
+      w01010_Flag = #{record.w01010Flag,jdbcType=VARCHAR},
+      w01009_Rtd = #{record.w01009Rtd,jdbcType=REAL},
+      w01009_Flag = #{record.w01009Flag,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.suchness.intellisense.model.WaterQualityHistoryData">
+    update water_quality_history_data
+    <set>
+      <if test="siteId != null">
+        site_id = #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="dateTime != null">
+        date_time = #{dateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="w01001Rtd != null">
+        w01001_Rtd = #{w01001Rtd,jdbcType=REAL},
+      </if>
+      <if test="w01001Flag != null">
+        w01001_Flag = #{w01001Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w01019Rtd != null">
+        w01019_Rtd = #{w01019Rtd,jdbcType=REAL},
+      </if>
+      <if test="w01019Flag != null">
+        w01019_Flag = #{w01019Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w21011Rtd != null">
+        w21011_Rtd = #{w21011Rtd,jdbcType=REAL},
+      </if>
+      <if test="w21011Flag != null">
+        w21011_Flag = #{w21011Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w21003Rtd != null">
+        w21003_Rtd = #{w21003Rtd,jdbcType=REAL},
+      </if>
+      <if test="w21003Flag != null">
+        w21003_Flag = #{w21003Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w01010Rtd != null">
+        w01010_Rtd = #{w01010Rtd,jdbcType=REAL},
+      </if>
+      <if test="w01010Flag != null">
+        w01010_Flag = #{w01010Flag,jdbcType=VARCHAR},
+      </if>
+      <if test="w01009Rtd != null">
+        w01009_Rtd = #{w01009Rtd,jdbcType=REAL},
+      </if>
+      <if test="w01009Flag != null">
+        w01009_Flag = #{w01009Flag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.suchness.intellisense.model.WaterQualityHistoryData">
+    update water_quality_history_data
+    set site_id = #{siteId,jdbcType=INTEGER},
+      date_time = #{dateTime,jdbcType=TIMESTAMP},
+      w01001_Rtd = #{w01001Rtd,jdbcType=REAL},
+      w01001_Flag = #{w01001Flag,jdbcType=VARCHAR},
+      w01019_Rtd = #{w01019Rtd,jdbcType=REAL},
+      w01019_Flag = #{w01019Flag,jdbcType=VARCHAR},
+      w21011_Rtd = #{w21011Rtd,jdbcType=REAL},
+      w21011_Flag = #{w21011Flag,jdbcType=VARCHAR},
+      w21003_Rtd = #{w21003Rtd,jdbcType=REAL},
+      w21003_Flag = #{w21003Flag,jdbcType=VARCHAR},
+      w01010_Rtd = #{w01010Rtd,jdbcType=REAL},
+      w01010_Flag = #{w01010Flag,jdbcType=VARCHAR},
+      w01009_Rtd = #{w01009Rtd,jdbcType=REAL},
+      w01009_Flag = #{w01009Flag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

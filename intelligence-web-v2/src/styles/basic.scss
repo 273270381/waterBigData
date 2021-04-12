@@ -1,0 +1,98 @@
+.basic-info {
+  background: url("../assets/images/bg.jpg");
+  background-size: 100% 100%;
+  span{
+    color: white;
+  }
+}
+.basic-info-card{
+  background-color: transparent;
+  border: 0px !important;
+}
+.basic-info-a{
+  font-size: 12px;
+  color: white;
+  font-family:Arial;
+  margin-left: 20px
+}
+
+.basic-search{
+  width: 80px!important;
+  border-radius: 8px;
+  background-image: linear-gradient(#014EA7, #0786AB);
+}
+
+.basic-date{
+  background-color: #041A2F !important;
+  color: white;
+}
+.basic-date .el-picker-panel__sidebar{
+  background-color: #041A2F !important;
+}
+.basic-date .el-picker-panel__shortcut{
+  color: white;
+}
+.basic-date .el-date-table th{
+  color: white!important;
+}
+.basic-date .el-date-table td.in-range div{
+  background-color: #8a6d3b!important;
+  &:hover{
+    background-color: #8a6d3b!important;
+  }
+}
+.basic-pagination{
+  background-color: #041A2F;
+}
+.basic-pagination .el-select-dropdown__item{
+  color:white;
+}
+.basic-pagination .el-select-dropdown__item.hover{
+  background-color: #8a6d3b!important;
+}
+.btn{
+  border: 0;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  &:hover{
+    cursor:pointer
+  }
+  &:active{
+    transform: translateY(2px);
+  }
+}
+.print{
+  background: url("../assets/images/print.png");
+  background-size: 100%;
+  border: 0px;
+  background-repeat: no-repeat;
+  margin-right: 40px;
+}
+.export{
+  background: url("../assets/images/export.png");
+  background-size: 100%;
+  border: 0px;
+  background-repeat: no-repeat;
+}
+.el-tabs--left .el-tabs__item.is-left{
+  text-align: left!important;
+}
+.el-tabs--left .el-tabs__nav.is-left, .el-tabs--left .el-tabs__nav.is-right, .el-tabs--right .el-tabs__nav.is-left, .el-tabs--right .el-tabs__nav.is-right {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.el-tabs__active-bar{
+  background-color: transparent!important;
+}
+.el-tabs--left .el-tabs__header.is-left, .el-tabs--left .el-tabs__header.is-right,
+.el-tabs--left .el-tabs__nav-scroll, .el-tabs--left .el-tabs__nav-wrap.is-left,
+.el-tabs--left .el-tabs__nav-wrap.is-right, .el-tabs--right .el-tabs__header.is-left,
+.el-tabs--right .el-tabs__header.is-right, .el-tabs--right .el-tabs__nav-scroll,
+.el-tabs--right .el-tabs__nav-wrap.is-left, .el-tabs--right .el-tabs__nav-wrap.is-right{
+  width: 100%;
+}
+.el-divider--horizontal{
+  margin: 5px 0!important;
+}

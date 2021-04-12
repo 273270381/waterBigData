@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.intellisense.mapper.WaterQualityAlarmDataMapper">
+  <resultMap id="BaseResultMap" type="com.suchness.intellisense.model.WaterQualityAlarmData">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="station_id" jdbcType="BIGINT" property="stationId" />
+    <result column="device_id" jdbcType="INTEGER" property="deviceId" />
+    <result column="alarmtime" jdbcType="TIMESTAMP" property="alarmtime" />
+    <result column="alarmtype" jdbcType="BIGINT" property="alarmtype" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, station_id, device_id, alarmtime, alarmtype, description, status
+  </sql>
+  <select id="selectByExample" parameterType="com.suchness.intellisense.model.WaterQualityAlarmDataExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from water_quality_alarm_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from water_quality_alarm_data
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from water_quality_alarm_data
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.suchness.intellisense.model.WaterQualityAlarmDataExample">
+    delete from water_quality_alarm_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.suchness.intellisense.model.WaterQualityAlarmData">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into water_quality_alarm_data (station_id, device_id, alarmtime, 
+      alarmtype, description, status
+      )
+    values (#{stationId,jdbcType=BIGINT}, #{deviceId,jdbcType=INTEGER}, #{alarmtime,jdbcType=TIMESTAMP}, 
+      #{alarmtype,jdbcType=BIGINT}, #{description,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.suchness.intellisense.model.WaterQualityAlarmData">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into water_quality_alarm_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stationId != null">
+        station_id,
+      </if>
+      <if test="deviceId != null">
+        device_id,
+      </if>
+      <if test="alarmtime != null">
+        alarmtime,
+      </if>
+      <if test="alarmtype != null">
+        alarmtype,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stationId != null">
+        #{stationId,jdbcType=BIGINT},
+      </if>
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="alarmtime != null">
+        #{alarmtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="alarmtype != null">
+        #{alarmtype,jdbcType=BIGINT},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.suchness.intellisense.model.WaterQualityAlarmDataExample" resultType="java.lang.Long">
+    select count(*) from water_quality_alarm_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update water_quality_alarm_data
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.stationId != null">
+        station_id = #{record.stationId,jdbcType=BIGINT},
+      </if>
+      <if test="record.deviceId != null">
+        device_id = #{record.deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="record.alarmtime != null">
+        alarmtime = #{record.alarmtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.alarmtype != null">
+        alarmtype = #{record.alarmtype,jdbcType=BIGINT},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update water_quality_alarm_data
+    set id = #{record.id,jdbcType=BIGINT},
+      station_id = #{record.stationId,jdbcType=BIGINT},
+      device_id = #{record.deviceId,jdbcType=INTEGER},
+      alarmtime = #{record.alarmtime,jdbcType=TIMESTAMP},
+      alarmtype = #{record.alarmtype,jdbcType=BIGINT},
+      description = #{record.description,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.suchness.intellisense.model.WaterQualityAlarmData">
+    update water_quality_alarm_data
+    <set>
+      <if test="stationId != null">
+        station_id = #{stationId,jdbcType=BIGINT},
+      </if>
+      <if test="deviceId != null">
+        device_id = #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="alarmtime != null">
+        alarmtime = #{alarmtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="alarmtype != null">
+        alarmtype = #{alarmtype,jdbcType=BIGINT},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.suchness.intellisense.model.WaterQualityAlarmData">
+    update water_quality_alarm_data
+    set station_id = #{stationId,jdbcType=BIGINT},
+      device_id = #{deviceId,jdbcType=INTEGER},
+      alarmtime = #{alarmtime,jdbcType=TIMESTAMP},
+      alarmtype = #{alarmtype,jdbcType=BIGINT},
+      description = #{description,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

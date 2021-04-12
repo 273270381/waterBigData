@@ -1,0 +1,75 @@
+server:
+  port: 8201
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: intellisense-auth
+          uri: lb://intellisense-auth
+          predicates:
+            - Path=/intellisense-auth/**
+          filters:
+            - StripPrefix=1
+        - id: intellisense-user
+          uri: lb://intellisense-user
+          predicates:
+            - Path=/intellisense-user/**
+          filters:
+            - StripPrefix=1
+        - id: intellisense-floodcontrol
+          uri: lb://intellisense-floodcontrol
+          predicates:
+            - Path=/intellisense-floodcontrol/**
+          filters:
+            - StripPrefix=1
+        - id: waterquality-monitor
+          uri: lb://waterquality-monitor
+          predicates:
+            - Path=/waterquality-monitor/**
+          filters:
+            - StripPrefix=1
+        - id: intellisense-riverpatorl
+          uri: lb://intellisense-riverpatorl
+          predicates:
+            - Path=/intellisense-riverpatorl/**
+          filters:
+            - StripPrefix=1
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:8201/intellisense-auth/rsa/publicKey'
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
+secure:
+  ignore:
+    urls:
+      - "/doc.html"
+      - "/swagger-resources/**"
+      - "/swagger/**"
+      - "/**/v2/api-docs"
+      - "/**/*.js"
+      - "/**/*.css"
+      - "/**/*.png"
+      - "/**/*.ico"
+      - "/webjars/springfox-swagger-ui/**"
+      - "/actuator/**"
+      - "/intellisense-auth/oauth/token"
+      - "/intellisense-auth/rsa/publicKey"
+      - "/intellisense-user/admin/login"
+      - "/intellisense-user/admin/register"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

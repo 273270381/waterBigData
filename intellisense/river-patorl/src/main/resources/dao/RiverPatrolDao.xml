@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.river.patorl.dao.RiverPatrolDao">
+    <select id="getRiverPatrolData" resultType="com.suchness.river.patorl.dto.RiverPatrolDataDto">
+        SELECT
+        r.name,
+        r.start_time as startTime,
+        r.end_time as endTime,
+        r.mileage,
+        r.problem,
+        (SELECT river_track.trackPoints FROM river_track WHERE river_track.id = r.river_track_id) as trackPoints,
+        r.`status`,
+        (SELECT rivers.riverName FROM rivers WHERE rivers.id = r.river_id) as riverName,
+        (SELECT river_area.`name` FROM river_area WHERE river_area.id = r.river_area_id) as riverArea
+        FROM river_patrol_data r
+        <where>
+            <if test="startTime != null and endTime != null">AND r.start_time BETWEEN #{startTime}AND #{endTime}</if>
+            <if test="name != null and name != ''">and r.`name` like "%"#{name}"%"</if>
+            <if test="status != null and status != ''">and r.`status`=#{status}</if>
+            <if test="areaId != null and areaId != ''">and r.river_area_id in(SELECT a.id FROM river_area a WHERE a.ancestors LIKE "%,"#{areaId}",%" OR  a.ancestors REGEXP  ","#{areaId}"$")</if>
+            <if test="areaId != null and areaId != ''">or r.river_area_id=#{areaId}</if>
+        </where>
+    </select>
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.waterquality.monitor.dao.WaterQualityDao">
+    <select id="getRealTimeData" resultType="com.suchness.waterquality.monitor.dto.WaterQualityInfoDto">
+        SELECT
+            w.id as siteId,
+            w.name as siteName,
+            w.longitude as longitude,
+            w.latitude as latitude,
+            w.address as address,
+            r.date_time as captureTime,
+            r.w01001_Rtd as ph,
+            r.w01019_Rtd as gmsy,
+            r.w21011_Rtd as zl,
+            r.w21003_Rtd as ad,
+            r.w01010_Rtd as sw,
+            r.w01009_Rtd as rjy,
+            (select area.area_name from area where area_id = w.code_region) as regionName,
+            (select rivers.riverName from rivers where id = w.code_waterarea) as valleyName
+        FROM
+            water_quality_site w,water_quality_real_data r
+        WHERE
+             r.site_id = w.id
+    </select>
+
+    <select id="getHistoryData" resultType="com.suchness.waterquality.monitor.dto.WaterQualityInfoDto">
+        SELECT
+            w.id as siteId,
+            w.name as siteName,
+            w.longitude as longitude,
+            w.latitude as latitude,
+            w.address as address,
+            r.date_time as captureTime,
+            r.w01001_Rtd as ph,
+            r.w01019_Rtd as gmsy,
+            r.w21011_Rtd as zl,
+            r.w21003_Rtd as ad,
+            r.w01010_Rtd as sw,
+            r.w01009_Rtd as rjy
+        FROM
+            water_quality_site w,water_quality_history_data r
+        WHERE
+             r.site_id = w.id
+    </select>
+
+    <select id="getQualityEvaluationByStation" resultType="com.suchness.waterquality.monitor.dto.WaterQualityInfoDto">
+        SELECT
+            a.area_name as regionName,
+            w.id as siteId,
+            w.name as siteName,
+            r.date_time as captureTime,
+            r.w01001_Rtd as ph,
+            r.w01019_Rtd as gmsy,
+            r.w21011_Rtd as zl,
+            r.w21003_Rtd as ad,
+            r.w01010_Rtd as sw,
+            r.w01009_Rtd as rjy
+        FROM
+            water_quality_site w,water_quality_data_week r,area a
+        WHERE
+            w.id = r.site_id and w.code_region = a.area_id
+        <if test="stationId!=null and stationId!=''">
+            AND r.site_id = #{stationId,jdbcType=VARCHAR}
+        </if>
+        <if test="areaId!=null and areaId!=''">
+            AND (w.code_region = #{areaId} OR w.code_region IN ( SELECT t.area_id FROM area t WHERE FIND_IN_SET (#{areaId},ancestors) ))
+        </if>
+        <if test="callbackTimeStart!=null and callbackTimeStart!=''">
+            AND r.date_time <![CDATA[ >= ]]> #{callbackTimeStart,jdbcType=VARCHAR}
+        </if>
+        <if test="endTime!=null and endTime!=''">
+            AND r.date_time <![CDATA[ < ]]> #{endTime,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <select id="getQualityStationInfo" resultType="com.suchness.waterquality.monitor.dto.WaterQualityInfoDto">
+        SELECT
+            w.name as siteName,
+            (select area.area_name from area where area_id = w.code_region) as regionName,
+            (select rivers.riverName from rivers where id = w.code_waterarea) as valleyName
+        FROM
+            water_quality_site w
+        WHERE
+            w.id = #{stationId,jdbcType=VARCHAR}
+    </select>
+
+</mapper>

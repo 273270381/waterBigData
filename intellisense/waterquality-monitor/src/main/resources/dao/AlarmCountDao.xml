@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.waterquality.monitor.dao.AlarmCountDao">
+    <select id="getAlarmCount" resultType="com.suchness.waterquality.monitor.dto.AlarmCount">
+        SELECT
+        wq.`name` as areaName,
+        (SELECT area.area_name FROM area WHERE wq.code_region = area.area_id) as area,
+        (SELECT a.area_name FROM area  a INNER JOIN area b ON a.area_id = b.super_area_id  WHERE wq.code_region = b.area_id) as superArea,
+        SUM(case when wqd.alarmtype = 2 then 1 else 0 end) as deviceCount,
+        SUM(case when wqd.alarmtype = 4 then 1 else 0 end) as dataCount,
+        SUM(case when wqd.alarmtype = 3 then 1 else 0 end) as disconnectCount,
+        COUNT(*) AS total
+        FROM
+        water_quality_site wq INNER JOIN water_quality_alarm_data wqd ON wq.id = wqd.station_id
+        <where>
+            <if test="startTime != null and endTime != null">AND wqd.alarmtime BETWEEN #{startTime}AND #{endTime}</if>
+        </where>
+        GROUP BY wq.`name`
+    </select>
+
+    <select id="getAlarmCountValley" resultType="com.suchness.waterquality.monitor.dto.AlarmCount">
+        SELECT
+        wq.`name` as areaName,
+        (SELECT drainage_area.`name` FROM drainage_area WHERE wq.code_waterarea = drainage_area.valley_id) as area,
+        (SELECT a.`name` FROM drainage_area  a INNER JOIN drainage_area b ON a.valley_id = b.super_valley_id  WHERE wq.code_waterarea = b.valley_id) as superArea,
+        SUM(case when wqd.alarmtype = 2 then 1 else 0 end) as deviceCount,
+        SUM(case when wqd.alarmtype = 4 then 1 else 0 end) as dataCount,
+        SUM(case when wqd.alarmtype = 3 then 1 else 0 end) as disconnectCount,
+        COUNT(*) AS total
+        FROM
+        water_quality_site wq INNER JOIN water_quality_alarm_data wqd ON wq.id = wqd.station_id
+        <where>
+            <if test="startTime != null and endTime != null">AND wqd.alarmtime BETWEEN #{startTime}AND #{endTime}</if>
+        </where>
+        GROUP BY wq.`name`
+    </select>
+
+    <select id="getAreas" resultType="com.suchness.waterquality.monitor.dto.Area">
+        SELECT * FROM(
+        SELECT
+        a.area_name as name,
+        a.area_code as code,
+        (SELECT area.area_name FROM area WHERE a.super_area_id = area.area_id) as superName,
+        dict.`name` as dictname
+        FROM area as a
+        INNER JOIN dict ON a.lever_id = dict.id
+        )b
+        <where>
+            <if test="areaName != null and areaName != ''">AND b.superName =#{areaName}</if>
+            <if test="dictName != null and dictName != ''">AND b.dictname =#{dictName}</if>
+        </where>
+    </select>
+
+    <select id="getVallrys" resultType="com.suchness.intellisense.model.DrainageArea">
+        SELECT
+          drainage_area.name,
+          drainage_area.valley_id,
+          drainage_area.`code`,
+          drainage_area.type,
+          drainage_area.super_valley_id
+        FROM drainage_area
+          LEFT JOIN drainage_area as a  ON a.valley_id = drainage_area.super_valley_id WHERE a.`name` =#{name}
+    </select>
+</mapper>

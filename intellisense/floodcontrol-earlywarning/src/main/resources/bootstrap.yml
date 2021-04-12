@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: intellisense-floodcontrol
+
+
+
+logging:
+    level:
+      com.suchness.intellisense.mapper: trace

@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: waterquality-monitor
+
+
+logging:
+  level:
+    com.suchness.intellisense.mapper: trace

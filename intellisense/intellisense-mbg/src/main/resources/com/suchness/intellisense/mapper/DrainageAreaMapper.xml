@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.intellisense.mapper.DrainageAreaMapper">
+  <resultMap id="BaseResultMap" type="com.suchness.intellisense.model.DrainageArea">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="valley_id" jdbcType="INTEGER" property="valleyId" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="super_valley_id" jdbcType="INTEGER" property="superValleyId" />
+    <result column="ancestors" jdbcType="VARCHAR" property="ancestors" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, valley_id, code, type, super_valley_id, ancestors
+  </sql>
+  <select id="selectByExample" parameterType="com.suchness.intellisense.model.DrainageAreaExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from drainage_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from drainage_area
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from drainage_area
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.suchness.intellisense.model.DrainageAreaExample">
+    delete from drainage_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.suchness.intellisense.model.DrainageArea">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into drainage_area (name, valley_id, code, 
+      type, super_valley_id, ancestors
+      )
+    values (#{name,jdbcType=VARCHAR}, #{valleyId,jdbcType=INTEGER}, #{code,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{superValleyId,jdbcType=INTEGER}, #{ancestors,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.suchness.intellisense.model.DrainageArea">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into drainage_area
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="valleyId != null">
+        valley_id,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="superValleyId != null">
+        super_valley_id,
+      </if>
+      <if test="ancestors != null">
+        ancestors,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="valleyId != null">
+        #{valleyId,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="superValleyId != null">
+        #{superValleyId,jdbcType=INTEGER},
+      </if>
+      <if test="ancestors != null">
+        #{ancestors,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.suchness.intellisense.model.DrainageAreaExample" resultType="java.lang.Long">
+    select count(*) from drainage_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update drainage_area
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.valleyId != null">
+        valley_id = #{record.valleyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.code != null">
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=VARCHAR},
+      </if>
+      <if test="record.superValleyId != null">
+        super_valley_id = #{record.superValleyId,jdbcType=INTEGER},
+      </if>
+      <if test="record.ancestors != null">
+        ancestors = #{record.ancestors,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update drainage_area
+    set id = #{record.id,jdbcType=BIGINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      valley_id = #{record.valleyId,jdbcType=INTEGER},
+      code = #{record.code,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=VARCHAR},
+      super_valley_id = #{record.superValleyId,jdbcType=INTEGER},
+      ancestors = #{record.ancestors,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.suchness.intellisense.model.DrainageArea">
+    update drainage_area
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="valleyId != null">
+        valley_id = #{valleyId,jdbcType=INTEGER},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="superValleyId != null">
+        super_valley_id = #{superValleyId,jdbcType=INTEGER},
+      </if>
+      <if test="ancestors != null">
+        ancestors = #{ancestors,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.suchness.intellisense.model.DrainageArea">
+    update drainage_area
+    set name = #{name,jdbcType=VARCHAR},
+      valley_id = #{valleyId,jdbcType=INTEGER},
+      code = #{code,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      super_valley_id = #{superValleyId,jdbcType=INTEGER},
+      ancestors = #{ancestors,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

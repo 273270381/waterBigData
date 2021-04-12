@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suchness.waterquality.monitor.dao.AlarmManageDao">
+    <select id="getAlarmList" resultType="com.suchness.waterquality.monitor.dto.AlarmManagerParam">
+      SELECT
+      (@id := @id+1) AS id,
+      a.stationName,
+      a.device,
+      a.alarmTime,
+      a.alarmType,
+      a.description,
+      a.status
+      FROM
+      (SELECT
+      (SELECT wq.name FROM water_quality_site wq WHERE wq.id = wqd.station_id) as stationName,
+      (SELECT dict.name FROM dict WHERE dict.id = wqd.device_id) as device,
+      wqd.alarmtime as alarmTime,
+      (SELECT dict.name FROM dict WHERE dict.id = wqd.alarmtype) as alarmType,
+      wqd.description,
+      wqd.`status`
+      FROM water_quality_alarm_data wqd)a,(select @id :=0)m
+      <where>
+        <if test="stationName != null and stationName != ''">AND a.stationName = #{stationName}</if>
+        <if test="alarmType != null and alarmType !=''">AND a.alarmType = #{alarmType}</if>
+        <if test="startTime != null and  endTime != null ">AND a.alarmTime BETWEEN #{startTime} AND #{endTime}</if>
+      </where>
+    </select>
+</mapper>
